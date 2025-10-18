@@ -36,6 +36,8 @@ public class MouseFollower : MonoBehaviour
 
     private bool isResurrected = false;
 
+    public LightMovement light = new LightMovement();
+
     /// <summary>
     /// Called when the script instance is being loaded.
     /// </summary>
@@ -155,6 +157,7 @@ public class MouseFollower : MonoBehaviour
     }
     public void OnDeath()
     {
+        light.OnReset();
         transform.position = startPos;
         isResurrected = false;
         Debug.Log("You die");
