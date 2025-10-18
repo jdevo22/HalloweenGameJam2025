@@ -5,7 +5,25 @@ public class BearTrap : MonoBehaviour
     [SerializeField] private AudioSource triggerSound;
     [SerializeField] private Animator animator;
 
+    private SpriteRenderer spriteRenderer;
+
     private bool triggered = false;
+
+    private void Awake()
+    {
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
+        HideTrap();
+    }
+
+    public void RevealTrap()
+    {
+        spriteRenderer.enabled = true;
+    }
+
+    public void HideTrap()
+    {
+        spriteRenderer.enabled = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

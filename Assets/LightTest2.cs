@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.U2D;
 using System.Collections;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class LightTest2 : MonoBehaviour
 {
     // ... (rayCount, rayLength, etc. are unchanged) ...
     public int rayCount = 50;
     public float rayLength = 10f;
-    [Range(0, 360)]
-    public float lightAngle = 90f;
+    public float lightAngle = 360;
     public LayerMask obstacleLayer;
     public SpriteShapeController lightShapeController;
 
@@ -23,9 +24,12 @@ public class LightTest2 : MonoBehaviour
     private float initialRayLength;
     private Coroutine shrinkEffectCoroutine; // 2. Variable to track the running coroutine
 
+    private List<BearTrap> bearTrapList;
+
     void Awake()
     {
         initialRayLength = rayLength;
+        bearTrapList = new List<BearTrap>();
     }
 
     void OnEnable()
@@ -90,6 +94,16 @@ public class LightTest2 : MonoBehaviour
 
     void UpdateLightShape()
     {
+        if (bearTrapList.Count > 0)
+        {
+            for (int i = 0; i < bearTrapList.Count; i++)
+            {
+                bearTrapList[i].HideTrap();
+            }
+            bearTrapList.Clear();
+        }
+
+        
         lightShapeController.spline.Clear();
         lightShapeController.spline.InsertPointAt(0, Vector3.zero);
         lightShapeController.spline.SetHeight(0, 0);
@@ -113,6 +127,11 @@ public class LightTest2 : MonoBehaviour
                     player.OnDeath();
                     Debug.Log("Light test");
                 }
+
+                if(hit.transform.tag == "trap")
+                {
+                    bearTrapList.Add(hit.transform.GetComponent<BearTrap>());
+                }
             }
             else
             {
@@ -120,6 +139,10 @@ public class LightTest2 : MonoBehaviour
             }
             lightShapeController.spline.InsertPointAt(i + 1, transform.InverseTransformPoint(hitPoint));
             lightShapeController.spline.SetHeight(i + 1, 0);
+        }
+        for (int i = 0; i < bearTrapList.Count; i++)
+        {
+            bearTrapList[i].RevealTrap();
         }
     }
 }
