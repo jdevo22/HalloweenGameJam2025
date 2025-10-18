@@ -35,7 +35,7 @@ public class MouseFollower : MonoBehaviour
     private Vector2 lightPos;
 
     private bool isResurrected = false;
-    public LightMovement light = new LightMovement();
+    private LightMovement light = new LightMovement();
     public TokenManager tokenManager; //Drag into component in inspector
 
     /// <summary>
@@ -51,6 +51,8 @@ public class MouseFollower : MonoBehaviour
         }
 
         this.GetComponent<SpriteRenderer>().color = Color.red;
+
+        light = lightTransform.GetComponent<LightMovement>();
     }
 
     /// <summary>
