@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 /// <summary>
 /// This script makes a 2D GameObject continuously follow the mouse cursor's position in the game world.
@@ -26,10 +27,19 @@ public class MouseFollower : MonoBehaviour
     [Tooltip("Which layers should block the raycast between this object and the mouse.")]
     [SerializeField] private LayerMask blockingLayers;
 
+
+    
+
+    
+
     // A private variable to store the main camera. Caching is more efficient.
     private Camera mainCamera;
 
     private Vector2 startPos;
+    
+    // --- Kai's Destabilization Variables ---
+    private Vector2 externalMovementOffset = Vector2.zero;
+    private float destabilizeTimer = 0f;
 
     public Transform lightTransform;
     private Vector2 lightPos;
@@ -62,6 +72,8 @@ public class MouseFollower : MonoBehaviour
         // Get the mouse position in world coordinates.
         Vector3 mouseWorldPosition = GetMouseWorldPosition();
 
+        
+
         // --- NEW: RAYCAST LOGIC ---
 
         // 1. Check for a collider directly under the mouse cursor.
@@ -71,6 +83,9 @@ public class MouseFollower : MonoBehaviour
         Vector2 direction = (Vector2)mouseWorldPosition - (Vector2)transform.position;
         float distance = direction.magnitude;
         RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, direction, distance, blockingLayers);
+
+        // Kai messing with stuff
+        direction += externalMovementOffset;
 
         // For debugging: Draw the ray in the Scene view. It will be green if clear, red if blocked.
         Color rayColor = raycastHit.collider == null ? Color.green : Color.red;
@@ -151,8 +166,16 @@ public class MouseFollower : MonoBehaviour
     {
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = mainCamera.WorldToScreenPoint(transform.position).z;
-        return mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+
+        // Convert mouse position from screen to world space
+        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+
+        // Apply destabilization effect (if active)
+        mouseWorldPosition = GetDestabilizedTarget(mouseWorldPosition);
+
+        return mouseWorldPosition;
     }
+
     public void OnDeath()
     {
         transform.position = startPos;
@@ -177,4 +200,48 @@ public class MouseFollower : MonoBehaviour
         }
         
     }
+
+    // ================================
+    // Kai's RedLight Destabilization Add-on
+    // ================================
+
+    [Header("Destabilization Settings")]
+    [SerializeField] private float wiggleAmount = 0.5f;      // How far the input wobbles
+    [SerializeField] private float wiggleSpeed = 8f;         // How fast the wobble oscillates
+    [SerializeField] private float destabilizedDuration = 2f; // How long the effect lasts
+
+    private bool isDestabilized = false;
+
+    // This version modifies the *movement direction*, not the position itself
+    private Vector3 GetDestabilizedTarget(Vector3 originalTarget)
+    {
+        if (!isDestabilized) return originalTarget;
+
+        // Apply small sinusoidal offset to make the target "wiggle"
+        float offsetX = Mathf.Sin(Time.time * wiggleSpeed) * wiggleAmount;
+        float offsetY = Mathf.Cos(Time.time * wiggleSpeed * 1.5f) * wiggleAmount;
+        return originalTarget + new Vector3(offsetX, offsetY, 0f);
+    }
+
+    // Call this when the player touches a RedLight trigger
+    public void SetDestabilized(float customDuration = -1f, float customAmount = -1f, float customSpeed = -1f)
+    {
+        if (customAmount > 0) wiggleAmount = customAmount;
+        if (customSpeed > 0) wiggleSpeed = customSpeed;
+
+        float duration = (customDuration > 0) ? customDuration : destabilizedDuration;
+
+        if (!isDestabilized)
+            StartCoroutine(DestabilizeRoutine(duration));
+    }
+
+    private IEnumerator DestabilizeRoutine(float duration)
+    {
+        isDestabilized = true;
+        yield return new WaitForSeconds(duration);
+        isDestabilized = false;
+    }
+
+
+
 }
