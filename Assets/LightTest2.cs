@@ -109,7 +109,9 @@ public class LightTest2 : MonoBehaviour
                 if (hit.transform.tag == "Player")
                 {
                     player = hit.collider.GetComponent<MouseFollower>();
+                    player.GetComponent<BoxCollider2D>().enabled = false;
                     player.OnDeath();
+                    Debug.Log("Light test");
                 }
             }
             else

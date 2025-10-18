@@ -24,6 +24,7 @@ public class BearTrap : MonoBehaviour
 
             // Call Jackson's death function
             player.OnDeath();
+            Debug.Log("Bear Trap");
 
             // Optional: trigger trap animation & sound
             if (animator != null)
