@@ -209,7 +209,8 @@ public class MouseFollower : MonoBehaviour
             isResurrected = true;
             this.GetComponent<SpriteRenderer>().sprite = liveSprite;
         }
-        
+        light.MouseClickedPlayer = true;
+
     }
 
     // ================================

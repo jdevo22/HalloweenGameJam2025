@@ -7,23 +7,25 @@ public class LightMovement : MonoBehaviour
 {
 
     public GameObject[] PathNode;
-    public GameObject Player;
+    public GameObject LightEnemy;
     public float MoveSpeed;
     float Timer;
     static Vector3 CurrentPositionHolder;
     int CurrentNode;
     private Vector2 startPosition;
     private Vector3 originPosition;
+    public bool MouseClickedPlayer;
 
     public Transform nodes1;
     public Transform nodes2;
 
     void Awake()
     {
+        MouseClickedPlayer = false;
         startPosition = transform.position;
-        if (Player != null)
+        if (LightEnemy != null)
         {
-            originPosition = Player.transform.position;
+            originPosition = LightEnemy.transform.position;
         }
     }
     void Start()
@@ -84,19 +86,22 @@ public class LightMovement : MonoBehaviour
             return;
         }
         Timer = 0;
-        startPosition = Player.transform.position;
+        startPosition = LightEnemy.transform.position;
         CurrentPositionHolder = PathNode[CurrentNode].transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!MouseClickedPlayer) {
+            return;
+        }
         CheckNode();
         Timer += Time.deltaTime * MoveSpeed;
 
-        if (Player.transform.position != CurrentPositionHolder)
+        if (LightEnemy.transform.position != CurrentPositionHolder)
         {
-            Player.transform.position = Vector3.MoveTowards(Player.transform.position,CurrentPositionHolder, MoveSpeed * Time.deltaTime);
+            LightEnemy.transform.position = Vector3.MoveTowards(LightEnemy.transform.position,CurrentPositionHolder, MoveSpeed * Time.deltaTime);
         }
         else
         {
@@ -114,9 +119,10 @@ public class LightMovement : MonoBehaviour
         }
     }
     public void OnReset() {
-        if (Player != null)
+        MouseClickedPlayer = false;
+        if (LightEnemy != null)
         {
-            Player.transform.position = originPosition;
+            LightEnemy.transform.position = originPosition;
         }
         Timer = 0;
         PathNode = null;

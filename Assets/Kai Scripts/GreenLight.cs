@@ -10,17 +10,17 @@ public class GreenLight : MonoBehaviour
     //[SerializeField] private float speedBoostMultiplier = 2f;   // How much faster
     //[SerializeField] private float speedBoostDuration = 3f;     // How long it lasts
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Player"))
-    //    {
-    //        MouseFollower player = collision.GetComponent<MouseFollower>();
-    //        if (player != null)
-    //        {
-    //            player.SetSpeedBoost(boostDuration, boostMultiplier);
-    //        }
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            MouseFollower player = collision.GetComponent<MouseFollower>();
+            if (player != null)
+            {
+                //player.SetSpeedBoost(boostDuration, boostMultiplier);
+            }
+        }
+    }
     //// Kai's GreenLight Speed Boost Add-on
     //// ================================
     //private bool isSpeedBoosted = false;
