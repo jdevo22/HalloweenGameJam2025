@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// This script makes a 2D GameObject continuously follow the mouse cursor's position in the game world.
 /// </summary>
+/// 
+// tutorial used: https://www.youtube.com/watch?v=mRkFj8J7y_I
 public class MouseFollower : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -31,6 +34,8 @@ public class MouseFollower : MonoBehaviour
     public Transform lightTransform;
     private Vector2 lightPos;
 
+    private bool isResurrected = false;
+
     /// <summary>
     /// Called when the script instance is being loaded.
     /// </summary>
@@ -42,6 +47,8 @@ public class MouseFollower : MonoBehaviour
         {
             Debug.LogError("MouseFollower Script Error: No main camera found. Tag a camera as 'MainCamera'.");
         }
+
+        this.GetComponent<SpriteRenderer>().color = Color.red;
     }
 
     /// <summary>
@@ -50,7 +57,7 @@ public class MouseFollower : MonoBehaviour
     void Update()
     {
         lightPos = lightTransform.position;
-        if (mainCamera == null) return;
+        if (mainCamera == null || !isResurrected) return;
 
         // Get the mouse position in world coordinates.
         Vector3 mouseWorldPosition = GetMouseWorldPosition();
@@ -110,21 +117,28 @@ public class MouseFollower : MonoBehaviour
         float distance = direction.magnitude;
 
         // 2. Perform the 2D raycast. It directly returns the hit information.
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direction, distance);
+
+        Vector2 outOfWayPosUp = new Vector2(this.transform.position.x - 0.5f, this.transform.position.y + 0.5f);
+        Vector2 outOfWayPosDown = new Vector2(this.transform.position.x + 0.5f, this.transform.position.y - 0.5f);
+
+        RaycastHit2D hitInfo1 = Physics2D.Raycast(outOfWayPosUp, direction, distance);
+        RaycastHit2D hitInfo2 = Physics2D.Raycast(outOfWayPosDown, direction, distance);
+        Debug.DrawRay(outOfWayPosUp, direction, Color.yellow);
+        Debug.DrawRay(outOfWayPosDown, direction, Color.yellow);
 
         // 3. Check if the raycast hit a collider.
-        if (hitInfo.collider != null)
+        if (hitInfo1.collider != null)
         {
             // 4. A collider was hit. Check if its tag is "light".
 
-            if(hitInfo.collider.tag == "light")
+            if(hitInfo1.collider.tag == "light")
             {
                 return true;
             }
         }
 
         // 5. If the raycast didn't hit anything, draw a yellow ray to show the path was checked but was empty.
-        Debug.DrawRay(transform.position, direction, Color.yellow);
+        
 
         return false;
     }
@@ -142,6 +156,25 @@ public class MouseFollower : MonoBehaviour
     public void OnDeath()
     {
         transform.position = startPos;
-        Debug.Log("You died");
+        isResurrected = false;
+        Debug.Log("You die");
+
+        this.GetComponent<SpriteRenderer>().color = Color.red;
+    }
+
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        Debug.Log("context started");
+        var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+        if (!rayHit.collider) return;
+        Debug.Log("collider Hit");
+        if (rayHit.collider.tag == "Player")
+        {
+            
+            isResurrected = true;
+            this.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        
     }
 }
