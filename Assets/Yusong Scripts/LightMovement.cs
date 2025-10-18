@@ -132,4 +132,13 @@ public class LightMovement : MonoBehaviour
         CurrentNode = 0;
         Start();
     }
+    public void OnEnable()
+    {
+       this.enabled = true;
+    }
+
+    public void OnDisable()
+    {
+        this.enabled = false;
+    }
 }

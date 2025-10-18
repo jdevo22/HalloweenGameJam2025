@@ -1,7 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
-using System.Collections;
+using UnityEngine.U2D;
 
 /// <summary>
 /// This script makes a 2D GameObject continuously follow the mouse cursor's position in the game world.
@@ -59,7 +60,22 @@ public class MouseFollower : MonoBehaviour
     private LightMovement light = new LightMovement();
     public BearTrapManager beartraps =new BearTrapManager();
     public TokenManager tokenManager; //Drag into component in inspector
+    public SpriteRenderer[] spriteRenderers;    //turning all the level sprite renderers off at the beginning of each level
+    public SpriteShapeRenderer[] spriteShapeRenderers; //turning all the level sprite shape renderers off at the beginning of each level
 
+
+    void Awake()
+    {
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].enabled = false;
+        }
+        for (int j = 0; j < spriteShapeRenderers.Length; j++)
+        {
+            spriteShapeRenderers[j].enabled = false;
+        }
+
+    }
     /// <summary>
     /// Called when the script instance is being loaded.
     /// </summary>
@@ -183,7 +199,10 @@ public class MouseFollower : MonoBehaviour
     public void OnDeath()
     {
         light.OnReset();
-        beartraps.SwitchTraps();
+        if (beartraps != null) {
+            beartraps.SwitchTraps();
+        }
+        
         transform.position = startPos;
         //this.GetComponent<BoxCollider2D>().enabled = true;
         isResurrected = false;
@@ -197,6 +216,15 @@ public class MouseFollower : MonoBehaviour
 
 
         this.GetComponent<SpriteRenderer>().sprite = deadSprite;
+
+        //Disable every sprite renderers except the player
+        for (int i = 0; i < spriteRenderers.Length; i++) {
+            spriteRenderers[i].enabled = false;
+        }
+        for (int j = 0; j < spriteShapeRenderers.Length; j++)
+        {
+            spriteShapeRenderers[j].enabled = false;
+        }
         
     }
 
@@ -212,8 +240,18 @@ public class MouseFollower : MonoBehaviour
             Debug.Log("player1");
             isResurrected = true;
             this.GetComponent<SpriteRenderer>().sprite = liveSprite;
+            light.MouseClickedPlayer = true;
         }
-        light.MouseClickedPlayer = true;
+        //Enable every sprite renderers once player is clicked
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].enabled = true;
+        }
+        for (int j = 0; j < spriteShapeRenderers.Length; j++)
+        {
+            spriteShapeRenderers[j].enabled = true;
+        }
+
 
     }
 
