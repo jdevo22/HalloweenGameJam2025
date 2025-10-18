@@ -57,7 +57,7 @@ public class MouseFollower : MonoBehaviour
 
     private bool isResurrected = false;
     private LightMovement light = new LightMovement();
-    public BearTrapManager beartraps =new BearTrapManager();
+    public BearTrapManager beartraps = new BearTrapManager();
     public TokenManager tokenManager; //Drag into component in inspector
 
     /// <summary>
@@ -183,7 +183,10 @@ public class MouseFollower : MonoBehaviour
     public void OnDeath()
     {
         light.OnReset();
-        beartraps.SwitchTraps();
+        if (beartraps != null)
+        {
+            beartraps.SwitchTraps();
+        }
         transform.position = startPos;
         //this.GetComponent<BoxCollider2D>().enabled = true;
         isResurrected = false;
