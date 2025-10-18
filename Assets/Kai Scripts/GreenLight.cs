@@ -17,7 +17,7 @@ public class GreenLight : MonoBehaviour
             MouseFollower player = collision.GetComponent<MouseFollower>();
             if (player != null)
             {
-                player.SetSpeedBoost(boostDuration, boostMultiplier);
+                //player.SetSpeedBoost(boostDuration, boostMultiplier);
             }
         }
     }
