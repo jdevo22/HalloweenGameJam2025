@@ -3,6 +3,7 @@ using UnityEngine;
 // This ensures the token has a Collider2D component
 [RequireComponent(typeof(Collider2D))]
 public class Token : MonoBehaviour
+
 {
     // We can set this tag in the Inspector. Default is "Player".
     [SerializeField] private string playerTag = "Player";
@@ -32,7 +33,7 @@ public class Token : MonoBehaviour
         {
             // DO NOT UNCOMMENT
             //isCollected = true; // Mark as collected
-            
+
             // Tell the TokenManager that this specific token was collected
             tokenManager.CollectToken(this.gameObject);
         }

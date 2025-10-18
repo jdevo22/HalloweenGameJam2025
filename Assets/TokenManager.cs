@@ -5,8 +5,9 @@ using System;
 
 public class TokenManager : MonoBehaviour
 {
+    public ParticleSystem particleEffectPrefab;
     public static event Action OnTokenCollected;
-
+    //public GameObject particleEffectPrefab;
     private int goalScore;
     private int currentScore;
     private List<GameObject> tokens;
@@ -36,6 +37,12 @@ public class TokenManager : MonoBehaviour
     public void CollectToken(GameObject token)
     {
         token.SetActive(false);
+        
+        particleEffectPrefab.transform.position = token.transform.localPosition; //gets positions for particle
+        var mainModule = particleEffectPrefab.main;
+        mainModule.playOnAwake = true;
+       //    var mainModule = targetParticleSystem.main; //access particle system
+       //    mainModule.playOnAwake = true; //sets view on
         currentScore++;
         Debug.Log("Token collected! Score: " + currentScore + "/" + goalScore);
 
@@ -44,6 +51,8 @@ public class TokenManager : MonoBehaviour
         if (currentScore < goalScore)
         {
             OnTokenCollected?.Invoke();
+            Instantiate(particleEffectPrefab, token.transform.position, Quaternion.identity); //creates the clone
+
         }
 
         if (collectSound != null)
