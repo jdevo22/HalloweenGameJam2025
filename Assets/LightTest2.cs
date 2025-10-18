@@ -157,6 +157,7 @@ public class LightTest2 : MonoBehaviour
         {
             player.OnDeath();
             player.GetComponent<BoxCollider2D>().enabled = false;
+            rayLength = initialRayLength;
         }
 
 
