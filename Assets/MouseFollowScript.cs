@@ -35,8 +35,8 @@ public class MouseFollower : MonoBehaviour
     private Vector2 lightPos;
 
     private bool isResurrected = false;
-
     public LightMovement light = new LightMovement();
+    public TokenManager tokenManager; //Drag into component in inspector
 
     /// <summary>
     /// Called when the script instance is being loaded.
@@ -161,6 +161,12 @@ public class MouseFollower : MonoBehaviour
         transform.position = startPos;
         isResurrected = false;
         Debug.Log("You die");
+
+        if (tokenManager != null) //Call TokenManager OnDeath to reset tokens
+        {
+            tokenManager.OnDeath();
+        }
+
 
         this.GetComponent<SpriteRenderer>().color = Color.red;
     }
