@@ -23,6 +23,13 @@ public class MouseFollower : MonoBehaviour
     [Tooltip("The distance at which the object slows down to its slowest speed.")]
     [SerializeField] private float farDistanceThreshold = 10f;
 
+    
+
+    [Header("Destabilization Settings")]
+    [SerializeField] private float wiggleAmount = 0.5f;      // How far the input wobbles
+    [SerializeField] private float wiggleSpeed = 8f;         // How fast the wobble oscillates
+    [SerializeField] private float destabilizedDuration = 2f; // How long the effect lasts
+
     [Header("Line of Sight")]
     [Tooltip("Which layers should block the raycast between this object and the mouse.")]
     [SerializeField] private LayerMask blockingLayers;
@@ -30,7 +37,6 @@ public class MouseFollower : MonoBehaviour
 
     
 
-    
 
     // A private variable to store the main camera. Caching is more efficient.
     private Camera mainCamera;
@@ -170,14 +176,9 @@ public class MouseFollower : MonoBehaviour
         
     }
 
-    // ================================
+    
     // Kai's RedLight Destabilization Add-on
     // ================================
-
-    [Header("Destabilization Settings")]
-    [SerializeField] private float wiggleAmount = 0.5f;      // How far the input wobbles
-    [SerializeField] private float wiggleSpeed = 8f;         // How fast the wobble oscillates
-    [SerializeField] private float destabilizedDuration = 2f; // How long the effect lasts
 
     private bool isDestabilized = false;
 
@@ -211,6 +212,6 @@ public class MouseFollower : MonoBehaviour
         isDestabilized = false;
     }
 
-
+   
 
 }
