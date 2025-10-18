@@ -26,6 +26,8 @@ public class LightTest2 : MonoBehaviour
 
     private List<BearTrap> bearTrapList;
 
+    private bool seesPlayer;
+
     void Awake()
     {
         initialRayLength = rayLength;
@@ -103,6 +105,7 @@ public class LightTest2 : MonoBehaviour
             bearTrapList.Clear();
         }
 
+        seesPlayer = false;
         
         lightShapeController.spline.Clear();
         lightShapeController.spline.InsertPointAt(0, Vector3.zero);
@@ -122,10 +125,11 @@ public class LightTest2 : MonoBehaviour
                 hitPoint = hit.point;
                 if (hit.transform.tag == "Player")
                 {
+                    
+                    seesPlayer = true;
                     player = hit.collider.GetComponent<MouseFollower>();
-                    player.GetComponent<BoxCollider2D>().enabled = false;
-                    player.OnDeath();
-                    Debug.Log("Light test");
+                    StartCoroutine(KillTimer());
+
                 }
 
                 if(hit.transform.tag == "trap")
@@ -145,4 +149,18 @@ public class LightTest2 : MonoBehaviour
             bearTrapList[i].RevealTrap();
         }
     }
+
+    private IEnumerator KillTimer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (seesPlayer)
+        {
+            player.OnDeath();
+            player.GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+
+    }
+
+
 }
