@@ -368,8 +368,13 @@ MonoBehaviour:
     m_Bits: 80
   liveSprite: {fileID: 4543641145375701396, guid: ffcf893fafb208c438eccedd8391981f, type: 3}
   deadSprite: {fileID: 292735072906253324, guid: 069fcc8df75676a4dae7174d18848f25, type: 3}
+  rotationSpeed: 10
+  minDistanceToUpdate: 0.02
   lightTransform: {fileID: 919811592}
   tokenManager: {fileID: 460533272}
+  wiggleAmount: 0.5
+  wiggleSpeed: 8
+  destabilizedDuration: 2
 --- !u!114 &103039091
 MonoBehaviour:
   m_ObjectHideFlags: 0

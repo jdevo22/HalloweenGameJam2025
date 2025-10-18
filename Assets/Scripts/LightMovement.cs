@@ -13,6 +13,7 @@ public class LightMovement : MonoBehaviour
     static Vector3 CurrentPositionHolder;
     int CurrentNode;
     private Vector2 startPosition;
+    private Vector3 originPosition;
 
     public Transform nodes1;
     public Transform nodes2;
@@ -20,6 +21,10 @@ public class LightMovement : MonoBehaviour
     void Awake()
     {
         startPosition = transform.position;
+        if (Player != null)
+        {
+            originPosition = Player.transform.position;
+        }
     }
     void Start()
     {
@@ -107,5 +112,15 @@ public class LightMovement : MonoBehaviour
             
             }
         }
+    }
+    public void OnReset() {
+        if (Player != null)
+        {
+            Player.transform.position = originPosition;
+        }
+        Timer = 0;
+        PathNode = null;
+        CurrentNode = 0;
+        Start();
     }
 }
