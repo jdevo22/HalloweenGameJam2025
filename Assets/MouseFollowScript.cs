@@ -167,7 +167,8 @@ public class MouseFollower : MonoBehaviour
             //this.GetComponent<BoxCollider2D>().isTrigger = false;
             //this.gameObject.layer = 6;
         }
-        
+        light.MouseClickedPlayer = true;
+
     }
 
     // ================================
