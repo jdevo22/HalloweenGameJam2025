@@ -27,10 +27,19 @@ public class MouseFollower : MonoBehaviour
     [Tooltip("Which layers should block the raycast between this object and the mouse.")]
     [SerializeField] private LayerMask blockingLayers;
 
+    [Header("Sprite Assets")]
+    [Tooltip("The sprite to use when the player is alive.")]
+    [SerializeField] private Sprite liveSprite;
 
-    
+    [Tooltip("The sprite to use when the player is dead.")]
+    [SerializeField] private Sprite deadSprite;
 
-    
+    [Header("Sprite Direction Rotation Settings")]
+    [Tooltip("How fast the player sprite rotates. Higher = snappier.")]
+    [SerializeField] private float rotationSpeed = 20f;
+
+    [Tooltip("The 'dead zone' radius. Won't update rotation if mouse is this close.")]
+    [SerializeField] private float minDistanceToUpdate = 0.1f;
 
     // A private variable to store the main camera. Caching is more efficient.
     private Camera mainCamera;
@@ -43,6 +52,8 @@ public class MouseFollower : MonoBehaviour
 
     public Transform lightTransform;
     private Vector2 lightPos;
+
+    private Quaternion targetRotation; // For Sprite Direction
 
     private bool isResurrected = false;
     private LightMovement light = new LightMovement();
@@ -113,6 +124,40 @@ public class MouseFollower : MonoBehaviour
         RaycastHit2D lightCheck = Physics2D.Raycast(this.transform.position, lightPos, 100, blockingLayers);
 
         Debug.DrawRay(transform.position, (Vector2)lightPos - (Vector2)transform.position, rayColor);
+
+
+        //Mouse sprite point direction
+
+        // 1. Calculate Direction
+        // Find the vector pointing from the player's position to the mouse's world position.
+        Vector2 spriteDirection = new Vector2(
+            mouseWorldPosition.x - transform.position.x,
+            mouseWorldPosition.y - transform.position.y
+        );
+
+        // 3. --- NEW: DEAD ZONE CHECK ---
+        // We check 'sqrMagnitude' because it's faster than 'magnitude' (avoids square root).
+        // We only update the target angle if the mouse is outside our dead zone.
+        if (spriteDirection.sqrMagnitude > minDistanceToUpdate * minDistanceToUpdate)
+        {
+            // 4. Calculate Angle
+            float angle = Mathf.Atan2(spriteDirection.y, spriteDirection.x) * Mathf.Rad2Deg -90f;
+
+            // 5. Store the Target Rotation
+            // (We apply the 90-degree offset here if your sprite faces Up)
+            // float angle = (Mathf.Atan2(spriteDirection.y, spriteDirection.x) * Mathf.Rad2Deg) - 90f;
+
+            targetRotation = Quaternion.Euler(0, 0, angle);
+        }
+
+        // 6. --- NEW: SMOOTH ROTATION ---
+        // Slerp (Spherical Linear Interpolation) smoothly moves from the
+        // current rotation to the target rotation every frame.
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            targetRotation,
+            Time.deltaTime * rotationSpeed
+        );
     }
    
 
@@ -149,7 +194,7 @@ public class MouseFollower : MonoBehaviour
         }
 
 
-        this.GetComponent<SpriteRenderer>().color = Color.red;
+        this.GetComponent<SpriteRenderer>().sprite = deadSprite;
     }
 
     public void OnClick(InputAction.CallbackContext context)
@@ -162,12 +207,10 @@ public class MouseFollower : MonoBehaviour
         {
             Debug.Log("player1");
             isResurrected = true;
-            this.GetComponent<SpriteRenderer>().color = Color.white;
-
-            //this.GetComponent<BoxCollider2D>().isTrigger = false;
-            //this.gameObject.layer = 6;
+            this.GetComponent<SpriteRenderer>().sprite = liveSprite;
         }
-        
+        light.MouseClickedPlayer = true;
+
     }
 
     // ================================

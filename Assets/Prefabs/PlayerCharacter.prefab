@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 292735072906253324, guid: 069fcc8df75676a4dae7174d18848f25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,9 +110,15 @@ MonoBehaviour:
   blockingLayers:
     serializedVersion: 2
     m_Bits: 80
+  liveSprite: {fileID: 4543641145375701396, guid: ffcf893fafb208c438eccedd8391981f, type: 3}
+  deadSprite: {fileID: 292735072906253324, guid: 069fcc8df75676a4dae7174d18848f25, type: 3}
+  rotationSpeed: 10
+  minDistanceToUpdate: 0.02
   lightTransform: {fileID: 0}
-  light: {fileID: 0}
   tokenManager: {fileID: 0}
+  wiggleAmount: 0.5
+  wiggleSpeed: 8
+  destabilizedDuration: 2
 --- !u!114 &1695996668715819064
 MonoBehaviour:
   m_ObjectHideFlags: 0
