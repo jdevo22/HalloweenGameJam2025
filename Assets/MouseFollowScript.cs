@@ -96,54 +96,8 @@ public class MouseFollower : MonoBehaviour
         RaycastHit2D lightCheck = Physics2D.Raycast(this.transform.position, lightPos, 100, blockingLayers);
 
         Debug.DrawRay(transform.position, (Vector2)lightPos - (Vector2)transform.position, rayColor);
-
-        if(HasClearLineOfSightToLight(lightTransform))
-        {
-            OnDeath();
-           
-        }
-
-        if (lightCheck == true)
-        {
-            if (lightCheck.collider.tag == "light")
-            {
-                OnDeath();
-            }
-        }
     }
-
-    public bool HasClearLineOfSightToLight(Transform target)
-    {
-        // 1. Calculate the direction and distance. Note the cast to Vector2 for 2D physics.
-        Vector2 direction = (Vector2)target.position - (Vector2)transform.position;
-        float distance = direction.magnitude;
-
-        // 2. Perform the 2D raycast. It directly returns the hit information.
-
-        Vector2 outOfWayPosUp = new Vector2(this.transform.position.x - 0.5f, this.transform.position.y + 0.5f);
-        Vector2 outOfWayPosDown = new Vector2(this.transform.position.x + 0.5f, this.transform.position.y - 0.5f);
-
-        RaycastHit2D hitInfo1 = Physics2D.Raycast(outOfWayPosUp, direction, distance);
-        RaycastHit2D hitInfo2 = Physics2D.Raycast(outOfWayPosDown, direction, distance);
-        Debug.DrawRay(outOfWayPosUp, direction, Color.yellow);
-        Debug.DrawRay(outOfWayPosDown, direction, Color.yellow);
-
-        // 3. Check if the raycast hit a collider.
-        if (hitInfo1.collider != null)
-        {
-            // 4. A collider was hit. Check if its tag is "light".
-
-            if(hitInfo1.collider.tag == "light")
-            {
-                return true;
-            }
-        }
-
-        // 5. If the raycast didn't hit anything, draw a yellow ray to show the path was checked but was empty.
-        
-
-        return false;
-    }
+   
 
     /// <summary>
     /// Helper method to calculate the mouse position in world space at the object's Z-depth.
@@ -161,6 +115,8 @@ public class MouseFollower : MonoBehaviour
         transform.position = startPos;
         isResurrected = false;
         Debug.Log("You die");
+        this.GetComponent<BoxCollider2D>().isTrigger = true;
+        //this.gameObject.layer = 0;
 
         if (tokenManager != null) //Call TokenManager OnDeath to reset tokens
         {
@@ -174,15 +130,17 @@ public class MouseFollower : MonoBehaviour
     public void OnClick(InputAction.CallbackContext context)
     {
         if (!context.started) return;
-        Debug.Log("context started");
         var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         if (!rayHit.collider) return;
         Debug.Log("collider Hit");
         if (rayHit.collider.tag == "Player")
         {
-            
+            Debug.Log("player1");
             isResurrected = true;
             this.GetComponent<SpriteRenderer>().color = Color.white;
+
+            //this.GetComponent<BoxCollider2D>().isTrigger = false;
+            //this.gameObject.layer = 6;
         }
         
     }
