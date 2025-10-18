@@ -57,6 +57,7 @@ public class MouseFollower : MonoBehaviour
 
     private bool isResurrected = false;
     private LightMovement light = new LightMovement();
+    public BearTrapManager beartraps =new BearTrapManager();
     public TokenManager tokenManager; //Drag into component in inspector
 
     /// <summary>
@@ -182,11 +183,12 @@ public class MouseFollower : MonoBehaviour
     public void OnDeath()
     {
         light.OnReset();
+        beartraps.SwitchTraps();
         transform.position = startPos;
+        //this.GetComponent<BoxCollider2D>().enabled = true;
         isResurrected = false;
         Debug.Log("You die");
         this.GetComponent<BoxCollider2D>().isTrigger = true;
-        //this.gameObject.layer = 0;
 
         if (tokenManager != null) //Call TokenManager OnDeath to reset tokens
         {
@@ -195,10 +197,12 @@ public class MouseFollower : MonoBehaviour
 
 
         this.GetComponent<SpriteRenderer>().sprite = deadSprite;
+        
     }
 
     public void OnClick(InputAction.CallbackContext context)
     {
+        this.GetComponent<BoxCollider2D>().enabled = true;
         if (!context.started) return;
         var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         if (!rayHit.collider) return;
