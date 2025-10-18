@@ -770,6 +770,10 @@ PrefabInstance:
       propertyPath: nodes1
       value: 
       objectReference: {fileID: 120751012}
+    - target: {fileID: 6913366451544737959, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
+      propertyPath: LightEnemy
+      value: 
+      objectReference: {fileID: 1995235562}
     - target: {fileID: 7058609618211167990, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
       propertyPath: m_Creator
       value: 
@@ -1171,8 +1175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PathNode: []
-  Player: {fileID: 919811590}
+  LightEnemy: {fileID: 0}
   MoveSpeed: 1
+  MouseClickedPlayer: 0
   nodes1: {fileID: 120751012}
   nodes2: {fileID: 0}
 --- !u!1 &1056249838
@@ -1856,6 +1861,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1995235562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5345780843172220339, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
+  m_PrefabInstance: {fileID: 569518569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
