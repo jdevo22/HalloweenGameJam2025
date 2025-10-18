@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LightMovement : MonoBehaviour
@@ -13,24 +14,70 @@ public class LightMovement : MonoBehaviour
     int CurrentNode;
     private Vector2 startPosition;
 
-    public Transform nodes;
+    public Transform nodes1;
+    public Transform nodes2;
 
     void Awake()
     {
+        startPosition = transform.position;
     }
     void Start()
     {
-        PathNode = new GameObject[nodes.childCount];
-        for (int i = 0; i < nodes.childCount; i++)
+        int randomIndex = Random.Range(0, 2);
+        //Debug.Log(randomIndex);
+        if (nodes1 == null && nodes2 == null)
         {
-            PathNode[i] = nodes.GetChild(i).gameObject;
+
+            GameObject stationaryNode = new GameObject("stationaryNode");
+            stationaryNode.transform.position = startPosition;
+            //create one node at the location
+            PathNode = new GameObject[1];
+            PathNode[0] = stationaryNode;
         }
-        //PathNode = GetComponentInChildren<>();
-        CheckNode();
+        else if (nodes1 == null) {
+            PathNode = new GameObject[nodes2.childCount];
+            for (int m = 0; m < nodes2.childCount; m++)
+            {
+                PathNode[m] = nodes2.GetChild(m).gameObject;
+            }
+        }
+        else if (nodes2 == null)
+        {
+            PathNode = new GameObject[nodes1.childCount];
+            for (int n = 0; n < nodes1.childCount; n++)
+            {
+                PathNode[n] = nodes1.GetChild(n).gameObject;
+            }
+        }
+        else
+        {
+            if (randomIndex == 0)
+            {
+                PathNode = new GameObject[nodes1.childCount];
+                for (int i = 0; i < nodes1.childCount; i++)
+                {
+                    PathNode[i] = nodes1.GetChild(i).gameObject;
+                }
+            }
+            else
+            {
+                PathNode = new GameObject[nodes2.childCount];
+                for (int j = 0; j < nodes2.childCount; j++)
+                {
+                    PathNode[j] = nodes2.GetChild(j).gameObject;
+                }
+
+            }
+            CheckNode();
+        }
     }
 
     void CheckNode()
     {
+        if (CurrentNode >=PathNode.Length)
+        {
+            return;
+        }
         Timer = 0;
         startPosition = Player.transform.position;
         CurrentPositionHolder = PathNode[CurrentNode].transform.position;
@@ -39,21 +86,25 @@ public class LightMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        CheckNode();
         Timer += Time.deltaTime * MoveSpeed;
 
         if (Player.transform.position != CurrentPositionHolder)
         {
-
-            Player.transform.position = Vector3.Lerp(startPosition, CurrentPositionHolder, Timer);
+            Player.transform.position = Vector3.MoveTowards(Player.transform.position,CurrentPositionHolder, MoveSpeed * Time.deltaTime);
         }
         else
         {
 
-            if (CurrentNode < PathNode.Length - 1)
+            if (CurrentNode < PathNode.Length-1)
             {
                 CurrentNode++;
                 CheckNode();
+            }
+            else {
+                CurrentNode = 0;
+                CheckNode();
+            
             }
         }
     }
