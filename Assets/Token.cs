@@ -30,8 +30,9 @@ public class Token : MonoBehaviour
         // Check if the object that entered is the player AND the token hasn't been collected yet
         if (other.CompareTag(playerTag) && !isCollected)
         {
-            isCollected = true; // Mark as collected
-
+            // DO NOT UNCOMMENT
+            //isCollected = true; // Mark as collected
+            
             // Tell the TokenManager that this specific token was collected
             tokenManager.CollectToken(this.gameObject);
         }
