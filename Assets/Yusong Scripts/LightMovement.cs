@@ -7,7 +7,7 @@ public class LightMovement : MonoBehaviour
 {
 
     public GameObject[] PathNode;
-    public GameObject LightEnemy;
+    private GameObject LightEnemy;
     public float MoveSpeed;
     float Timer;
     static Vector3 CurrentPositionHolder;
@@ -23,6 +23,7 @@ public class LightMovement : MonoBehaviour
     {
         MouseClickedPlayer = false;
         startPosition = transform.position;
+        LightEnemy = this.gameObject;
         if (LightEnemy != null)
         {
             originPosition = LightEnemy.transform.position;
