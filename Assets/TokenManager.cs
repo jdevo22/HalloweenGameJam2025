@@ -29,7 +29,6 @@ public class TokenManager : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
-        Debug.Log("Token Manager initialized. Goal Score: " + goalScore);
     }
 
 

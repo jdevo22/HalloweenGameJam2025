@@ -94,12 +94,11 @@ public class LightTest2 : MonoBehaviour
 
             }
         }
-
-        Debug.Log(otherLightTests.Count + "other light tests");
     }
 
     void OnEnable()
     {
+        
         TokenManager.OnTokenCollected += ShrinkLightForDuration;
     }
 
@@ -212,6 +211,18 @@ public class LightTest2 : MonoBehaviour
         {
             bearTrapList[i].RevealTrap();
         }
+
+        float normalizedSin = (Mathf.Sin(Time.time * 1) + 1f) / 2f;
+
+        // Use Lerp (Linear Interpolation) to map the 0-1 value to our desired alpha range.
+        float targetAlpha = Mathf.Lerp(100, 184, normalizedSin);
+
+        Color currentColor = lightShapeController.spriteShapeRenderer.color;
+
+        lightShapeController.spriteShapeRenderer.color = new Color(currentColor.r, targetAlpha, currentColor.b, currentColor.a);
+
+        Debug.Log(lightShapeController.spriteShapeRenderer.color);
+
     }
 
     private IEnumerator KillTimer()
