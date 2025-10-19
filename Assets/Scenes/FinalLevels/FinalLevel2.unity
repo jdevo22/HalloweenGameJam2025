@@ -3266,9 +3266,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2118461303}
     - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: spriteRenderers.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
       propertyPath: 'lightTransform.Array.data[0]'
       value: 
       objectReference: {fileID: 2118461303}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1426448422}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2081312152}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2058396688}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1191129361}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2103009456}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[5]'
+      value: 
+      objectReference: {fileID: 814617120}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: spriteShapeRenderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteShapeRenderers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1589930176}
     - target: {fileID: 4853755957622494503, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
@@ -3318,6 +3354,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+--- !u!212 &1426448422 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9214898837687103776, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
+  m_PrefabInstance: {fileID: 1341243763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1512554515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3540,6 +3581,11 @@ Transform:
   - {fileID: 766963021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1971053207 &1589930176 stripped
+SpriteShapeRenderer:
+  m_CorrespondingSourceObject: {fileID: 8265317305523577974, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
+  m_PrefabInstance: {fileID: 1341243763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1592945939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4688,6 +4734,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2086528981759109182, guid: 313b93b35e25e9e489f7039a7cd763ce, type: 3}
   m_PrefabInstance: {fileID: 312781065}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &2058396688 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4097364922111853831, guid: 313b93b35e25e9e489f7039a7cd763ce, type: 3}
+  m_PrefabInstance: {fileID: 312781065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2066885969
 GameObject:
   m_ObjectHideFlags: 0
@@ -4775,6 +4826,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &2081312152 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4097364922111853831, guid: 313b93b35e25e9e489f7039a7cd763ce, type: 3}
+  m_PrefabInstance: {fileID: 255811788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096786979
 GameObject:
   m_ObjectHideFlags: 0
