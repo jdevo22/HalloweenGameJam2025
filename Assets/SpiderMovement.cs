@@ -44,26 +44,34 @@ public class SpiderMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == lightHit.transform.tag)
+        if (collision != null)
         {
-            if (lightHit.collider != null)
+            Debug.Log("collision");
+            if (collision.transform.tag == "trap")
             {
+                Debug.Log("hmm");
                 if (isDying == false)
                 {
                     StartCoroutine(DeathTimer());
                     isDying = true;
                 }
+                
             }
         }
+
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.tag == lightHit.transform.tag)
+        if (collision != null)
         {
-            Debug.Log("not dying");
-            isDying = false;
-            onEscapeDeath.Invoke();
+            if (collision.transform.tag == "trap")
+            {
+                Debug.Log("not dying");
+                isDying = false;
+                onEscapeDeath.Invoke();
+            }
         }
     }
 
