@@ -1,104 +1,110 @@
 using UnityEngine;
 using UnityEngine.U2D;
 using System.Collections;
-using NUnit.Framework;
 using System.Collections.Generic;
 
 public class LightTest2 : MonoBehaviour
 {
-    // ... (rayCount, rayLength, etc. are unchanged) ...
+    [Header("Light Shape Settings")]
     public int rayCount = 50;
     public float rayLength = 10f;
     public float lightAngle = 360;
     public LayerMask obstacleLayer;
     public SpriteShapeController lightShapeController;
 
-    // 1. ADD PUBLIC VARIABLES FOR TIMING
     [Header("Shrink Effect Settings")]
-    [Tooltip("How long the shrink and grow animations take.")]
     public float shrinkGrowDuration = 0.25f;
-    [Tooltip("How long the light stays small.")]
     public float holdDuration = 1f;
 
-    private MouseFollower player;
+    // --- ADDED: Looping Pulse Effect Settings ---
+    [Header("Looping Pulse Effect")]
+    public bool enablePulseEffect = true;
+    public float pulseSpeed = 1f;
+    [Range(0f, 2f)] public float minSizeMultiplier = 0.9f;
+    [Range(0f, 2f)] public float maxSizeMultiplier = 1.1f;
+
+    // --- Private Variables ---
+    private Gradient pulseColor;
     private float initialRayLength;
-    private Coroutine shrinkEffectCoroutine; // 2. Variable to track the running coroutine
+    private Coroutine shrinkEffectCoroutine;
+    private SpriteShapeRenderer spriteRenderer; // ADDED: To change color
+    private bool isShrinkEffectActive = false; // ADDED: To manage effect priority
 
+    // --- Your Existing Private Variables ---
+    private MouseFollower player;
     private List<BearTrap> bearTrapList;
-
     private bool seesPlayer1;
-    private bool seesPlayer2;
-
     private int deathID;
-
     private List<GameObject> otherLightTests = new List<GameObject>();
 
     void Awake()
     {
         initialRayLength = rayLength;
+
+        // --- ADDED: Get the renderer component ---
+        spriteRenderer = lightShapeController.GetComponent<SpriteShapeRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("LightTest2 requires a SpriteShapeRenderer component on the same object as the SpriteShapeController.", this);
+        }
+
+        // --- 2. CALL A NEW METHOD TO BUILD THE GRADIENT ---
+        InitializePulseGradient();
+
+        // --- Your Existing Awake Logic (Unchanged) ---
         bearTrapList = new List<BearTrap>();
 
-        if(transform.name == "LightEnemy (1)")
+        if (transform.name == "LightEnemy (1)")
         {
-            try
-            {
-                otherLightTests.Add(GameObject.Find("LightEnemy (2)"));
-            }
-            catch
-            {
-
-            }
-            try
-            {
-                otherLightTests.Add(GameObject.Find("LightEnemy (3)"));
-            }
-            catch
-            {
-
-            }
+            try { otherLightTests.Add(GameObject.Find("LightEnemy (2)")); } catch { }
+            try { otherLightTests.Add(GameObject.Find("LightEnemy (3)")); } catch { }
         }
 
         if (transform.name == "LightEnemy (2)")
         {
-            try
-            {
-                otherLightTests.Add(GameObject.Find("LightEnemy (1)"));
-            }
-            catch
-            {
-
-            }
-            try
-            {
-                otherLightTests.Add(GameObject.Find("LightEnemy (3)"));
-            }
-            catch
-            {
-
-            }
+            try { otherLightTests.Add(GameObject.Find("LightEnemy (1)")); } catch { }
+            try { otherLightTests.Add(GameObject.Find("LightEnemy (3)")); } catch { }
         }
 
         if (transform.name == "LightEnemy (3)")
         {
-            try
-            {
-                otherLightTests.Add(GameObject.Find("LightEnemy (2)"));
-            }
-            catch
-            {
-
-            }
-            try
-            {
-                otherLightTests.Add(GameObject.Find("LightEnemy (1)"));
-            }
-            catch
-            {
-
-            }
+            try { otherLightTests.Add(GameObject.Find("LightEnemy (2)")); } catch { }
+            try { otherLightTests.Add(GameObject.Find("LightEnemy (1)")); } catch { }
         }
     }
 
+    // --- 3. NEW METHOD TO CREATE THE GRADIENT IN CODE ---
+    private void InitializePulseGradient()
+    {
+        pulseColor = new Gradient();
+
+        // Define the COLOR keys for the gradient.
+        // A GradientColorKey takes a (Color, time) pair. Time is from 0.0 to 1.0.
+        GradientColorKey[] colorKeys = new GradientColorKey[2];
+        colorKeys[0] = new GradientColorKey(new Color(1.0f, 0.9f, 0.2f), 0.0f); // Dim Yellow at the start
+        colorKeys[1] = new GradientColorKey(new Color(1.0f, 0.5f, 0.0f), 1.0f); // Bright Orange at the peak
+
+        // Define the ALPHA (opacity) keys for the gradient to create the fade.
+        // A GradientAlphaKey takes an (alpha, time) pair.
+        GradientAlphaKey[] alphaKeys = new GradientAlphaKey[3];
+        alphaKeys[0] = new GradientAlphaKey(0.3f, 0.0f);  // 30% opacity at the start
+        alphaKeys[1] = new GradientAlphaKey(1.0f, 0.5f);  // 100% opacity at the middle of the pulse
+        alphaKeys[2] = new GradientAlphaKey(0.3f, 1.0f);  // 30% opacity at the end
+
+        // Apply the color and alpha keys to the gradient.
+        pulseColor.SetKeys(colorKeys, alphaKeys);
+    }
+
+    // --- ADDED: Start method to launch the looping coroutine ---
+    void Start()
+    {
+        if (enablePulseEffect && spriteRenderer != null)
+        {
+            StartCoroutine(LoopingPulseCoroutine());
+        }
+    }
+
+    // --- Your Existing OnEnable/OnDisable (Unchanged) ---
     void OnEnable()
     {
         TokenManager.OnTokenCollected += ShrinkLightForDuration;
@@ -109,56 +115,72 @@ public class LightTest2 : MonoBehaviour
         TokenManager.OnTokenCollected -= ShrinkLightForDuration;
     }
 
+    // --- ADDED: New coroutine for the pulse effect ---
+    private IEnumerator LoopingPulseCoroutine()
+    {
+        while (enablePulseEffect)
+        {
+            float pulseProgress = (Mathf.Sin(Time.time * pulseSpeed) + 1f) / 2f;
+            spriteRenderer.color = pulseColor.Evaluate(pulseProgress);
+
+            if (!isShrinkEffectActive)
+            {
+                rayLength = Mathf.Lerp(initialRayLength * minSizeMultiplier, initialRayLength * maxSizeMultiplier, pulseProgress);
+            }
+
+            yield return null;
+        }
+    }
+
+    // --- Your Existing ShrinkLightForDuration (Unchanged) ---
     private void ShrinkLightForDuration()
     {
-        // 3. Stop the previous coroutine if it's still running
         if (shrinkEffectCoroutine != null)
         {
             StopCoroutine(shrinkEffectCoroutine);
         }
-        // Start the new one and store a reference to it
         shrinkEffectCoroutine = StartCoroutine(ShrinkEffectCoroutine());
     }
 
-    // 4. REWRITTEN COROUTINE FOR SMOOTH ANIMATION
+    // --- MODIFIED: ShrinkEffectCoroutine now includes the priority flag ---
     private IEnumerator ShrinkEffectCoroutine()
     {
-        float startLength = rayLength; // Current size
-        float targetLength = initialRayLength * 0.5f; // Shrunken size
+        isShrinkEffectActive = true; // Take control of the light's size
+
+        float startLength = rayLength;
+        float targetLength = initialRayLength * 0.5f;
         float elapsedTime = 0f;
 
-        // --- SHRINK PHASE ---
         while (elapsedTime < shrinkGrowDuration)
         {
-            // Interpolate from the starting size to the target size over time
             rayLength = Mathf.Lerp(startLength, targetLength, elapsedTime / shrinkGrowDuration);
             elapsedTime += Time.deltaTime;
-            yield return null; // Wait for the next frame
+            yield return null;
         }
-        rayLength = targetLength; // Ensure it ends exactly at the target size
+        rayLength = targetLength;
 
-        // --- WAIT PHASE ---
         yield return new WaitForSeconds(holdDuration);
 
-        // --- GROW PHASE ---
-        startLength = rayLength; // Current (shrunken) size
+        startLength = rayLength;
         elapsedTime = 0f;
         while (elapsedTime < shrinkGrowDuration)
         {
-            // Interpolate from the shrunken size back to the original size
             rayLength = Mathf.Lerp(startLength, initialRayLength, elapsedTime / shrinkGrowDuration);
             elapsedTime += Time.deltaTime;
-            yield return null; // Wait for the next frame
+            yield return null;
         }
-        rayLength = initialRayLength; // Ensure it ends exactly at the original size
+        rayLength = initialRayLength;
+
+        isShrinkEffectActive = false; // Release control back to the looping pulse
     }
 
-    // ... (Update and UpdateLightShape methods are unchanged) ...
+    // --- Your Existing Update (Unchanged) ---
     void Update()
     {
         UpdateLightShape();
     }
 
+    // --- Your Existing UpdateLightShape (Unchanged) ---
     void UpdateLightShape()
     {
         if (bearTrapList.Count > 0)
@@ -171,7 +193,7 @@ public class LightTest2 : MonoBehaviour
         }
 
         seesPlayer1 = false;
-        
+
         lightShapeController.spline.Clear();
         lightShapeController.spline.InsertPointAt(0, Vector3.zero);
         lightShapeController.spline.SetHeight(0, 0);
@@ -190,14 +212,12 @@ public class LightTest2 : MonoBehaviour
                 hitPoint = hit.point;
                 if (hit.transform.tag == "Player")
                 {
-                    
                     seesPlayer1 = true;
                     //player = hit.collider.GetComponent<MouseFollower>();
                     //StartCoroutine(KillTimer());
-
                 }
 
-                if(hit.transform.tag == "trap")
+                if (hit.transform.tag == "trap")
                 {
                     bearTrapList.Add(hit.transform.GetComponent<BearTrap>());
                 }
@@ -215,7 +235,8 @@ public class LightTest2 : MonoBehaviour
         }
     }
 
-    private IEnumerator KillTimer() //old depreciated
+    // --- ALL YOUR REMAINING METHODS (Unchanged) ---
+    private IEnumerator KillTimer()
     {
         yield return new WaitForSeconds(0.5f);
         if (seesPlayer1)
@@ -232,8 +253,6 @@ public class LightTest2 : MonoBehaviour
             }
             rayLength = initialRayLength;
         }
-
-
     }
 
     public void OnKill()
@@ -258,7 +277,7 @@ public class LightTest2 : MonoBehaviour
     {
         rayLength = initialRayLength;
 
-        if(id == 1)
+        if (id == 1)
         {
             for (int i = 0; i < otherLightTests.Count; i++)
             {
@@ -269,6 +288,4 @@ public class LightTest2 : MonoBehaviour
             }
         }
     }
-
-
 }
