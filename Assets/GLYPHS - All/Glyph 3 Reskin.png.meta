@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 21feb12405750cf4fa57aba4dc0728e9
+guid: d5dde7373ec3cc84aad01303207087c5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -395324502449548722
-    second: Glyph 2_0
-  - first:
-      213: 2697364582831565265
-    second: Glyph 2_1
-  - first:
-      213: -8861178669214813909
-    second: Glyph 2_2
-  - first:
-      213: -5317193494244867837
-    second: Glyph 2_3
+      213: -1900183680015633682
+    second: Glyph 3 Reskin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glyph 2_0
+      name: Glyph 3 Reskin_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 109
-        width: 53
-        height: 98
+        x: 57
+        y: 92
+        width: 212
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,74 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e429c74a576838af0800000000000000
-      internalID: -395324502449548722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Glyph 2_1
-      rect:
-        serializedVersion: 2
-        x: 121
-        y: 110
-        width: 73
-        height: 149
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d9256dfbc6fe6520800000000000000
-      internalID: 2697364582831565265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Glyph 2_2
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 115
-        width: 59
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b21be2ae2f4c60580800000000000000
-      internalID: -8861178669214813909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Glyph 2_3
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 76
-        width: 47
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 301448d40b88536b0800000000000000
-      internalID: -5317193494244867837
+      spriteID: ee27ca8b20131a5e0800000000000000
+      internalID: -1900183680015633682
       vertices: []
       indices: 
       edges: []
@@ -236,10 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Glyph 2_0: -395324502449548722
-      Glyph 2_1: 2697364582831565265
-      Glyph 2_2: -8861178669214813909
-      Glyph 2_3: -5317193494244867837
+      Glyph 3 Reskin_0: -1900183680015633682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

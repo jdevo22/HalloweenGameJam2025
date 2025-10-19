@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: abdcf5d4bf01e0048980859d9b061382
+guid: 416033744413cbf42a160c7a2297d96a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7466328438563416843
-    second: Glyph 4_0
-  - first:
-      213: -3105474624397210221
-    second: Glyph 4_1
+      213: -101032231558710008
+    second: Glyph 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glyph 4_0
+      name: Glyph 1_0
       rect:
         serializedVersion: 2
-        x: 90
-        y: 82
-        width: 145
-        height: 165
+        x: 87
+        y: 49
+        width: 152
+        height: 236
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0b28f4182abd9760800000000000000
-      internalID: 7466328438563416843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Glyph 4_1
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 213
-        width: 41
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 39d80d9584327e4d0800000000000000
-      internalID: -3105474624397210221
+      spriteID: 80df31f78bf099ef0800000000000000
+      internalID: -101032231558710008
       vertices: []
       indices: 
       edges: []
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Glyph 4_0: 7466328438563416843
-      Glyph 4_1: -3105474624397210221
+      Glyph 1_0: -101032231558710008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
