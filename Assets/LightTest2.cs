@@ -274,6 +274,7 @@ public class LightTest2 : MonoBehaviour
     public void OnKillReset()
     {
         deathID = 0;
+        ResetRays(1);
     }
 
     public void ResetRays(int id)
