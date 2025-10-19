@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using TMPro;
 
-using UnityEditor.Build.Content;
+using TMPro;
 
 public class DeathCount : MonoBehaviour
 {
@@ -14,20 +12,12 @@ public class DeathCount : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+      
     }
     public void YouDiedSucker()
     {
         int deathCount = PlayerPrefs.GetInt(DeathCountKey, 0); //makes it work across scenes
-        deathCount++;
+      
         Debug.Log("Deaths: " + deathCount);
     }
     public static int GetDeathCount()
