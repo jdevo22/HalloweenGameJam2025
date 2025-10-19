@@ -604,10 +604,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1030347487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21, y: -29}
-  m_SizeDelta: {x: 131.5399, y: 35.9045}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 21, y: -2000}
+  m_SizeDelta: {x: 350, y: 35.90454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1093396237
 MonoBehaviour:
@@ -653,7 +653,112 @@ MonoBehaviour:
 
     Hailie Tucker
 
-    Kai Biedermann'
+    Kai Biedermann
+
+
+    Quotes:
+
+
+    Lucas:
+    "Like HotLine Miami."
+
+    Yusong: "MIAMI!!!!"
+
+
+    ---
+
+
+    Jackson: "The
+    quote of the day is ''The only way out is through.''
+
+    Jason: "That''s not
+    a very fun quote."
+
+
+    ---
+
+
+    Jackson: "Oh no, we''re three hours into the
+    project and I have to do a push --force."
+
+
+    ---
+
+
+    Spencer: "This is my
+    sprite sheet. It is mathmatically perfect according to my TI-84"
+
+
+    ---
+
+
+    Ares:
+    "Jackson, did you actually leave at 11pm?"
+
+
+    ---
+
+
+    Jackson: "You''re
+    not one to read instructions."
+
+    Hailie: "My friends say my soup is more mozzarella
+    than tomato sauce."
+
+
+    ---
+
+
+    Yusong: "Well how come it''s generated the
+    same random number?"
+
+    Jackson: "Do I have to explain to you how statistics
+    works?"
+
+
+    ---
+
+
+    Hailie: [Babbiling about vollyball or something]
+
+    Everyone:
+    [Minding their own business]
+
+
+    ---
+
+
+    Yusong: "I fixed it. It''s a very
+    game-jam fix type fix though."
+
+    Jackson: "You wont believe what event we''re
+    in."
+
+
+    ---
+
+
+    Yusong: "Here do you want a snack?"
+
+    Jackson: "Is it
+    spicy?"
+
+    Yusung: [face bright red, dying inside] "No."
+
+
+    ---
+
+
+    Hailie:
+    I looked outside and saw sunlight. How unnatural.
+
+    Ares: Go touch grass.
+
+
+    ---
+
+
+'
   scrollSpeed: 30
   endPauseDuration: 5
 --- !u!114 &1093396238
