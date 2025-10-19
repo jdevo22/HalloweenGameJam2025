@@ -6288,7 +6288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathCount: 0
-  deathText: {fileID: 0}
+  deathText: {fileID: 1645820174}
 --- !u!4 &1523354019
 Transform:
   m_ObjectHideFlags: 0
@@ -6613,7 +6613,6 @@ GameObject:
   - component: {fileID: 1645820172}
   - component: {fileID: 1645820175}
   - component: {fileID: 1645820174}
-  - component: {fileID: 1645820173}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6640,20 +6639,6 @@ RectTransform:
   m_AnchoredPosition: {x: -787, y: 319}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1645820173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645820171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2a714918ec8ea4187ef0d8556a5ea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathCount: 0
-  deathText: {fileID: 1645820174}
 --- !u!114 &1645820174
 MonoBehaviour:
   m_ObjectHideFlags: 0
