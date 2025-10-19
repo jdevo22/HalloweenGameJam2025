@@ -38,6 +38,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpiderLevels/SpiderFinalLevel2.unity
     guid: 4a126e254ab1e29438dec314f565e5cd
+  - enabled: 1
+    path: Assets/Scenes/SpiderLevels/SpiderFinalLevel3.unity
+    guid: ee20bfbd7964dae4d8d8e891edd1b369
+  - enabled: 1
+    path: Assets/Scenes/SpiderLevels/SpiderFinalLevel4.unity
+    guid: 68c557f7a8f411444bb08eb88bf576ae
+  - enabled: 1
+    path: Assets/Scenes/SpiderLevels/SpiderFinalLevel5.unity
+    guid: 5730f8428fef7c84e8b7238205476669
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
