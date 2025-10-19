@@ -51,7 +51,6 @@ public class MouseFollower : MonoBehaviour
     private float destabilizeTimer = 0f;
 
     public Transform[] lightTransform;
-    private Vector2 lightPos;
 
     private Quaternion targetRotation; // For Sprite Direction
 
@@ -66,6 +65,7 @@ public class MouseFollower : MonoBehaviour
     void Start()
     {
         light = new LightMovement[lightTransform.Length];
+        Debug.Log(light.Length);
         startPos = transform.position;
         mainCamera = Camera.main;
         if (mainCamera == null)
@@ -178,32 +178,30 @@ public class MouseFollower : MonoBehaviour
 
     public void OnDeath()
     {
+        for (int i = 0; i < light.Length; i++)
+        {
+            light[i].OnReset();
+        }
+
         if (beartraps != null)
         {
-            for (int i = 0; i < light.Length; i++)
-            {
-                light[i].OnReset();
-            }
-
-            if (beartraps != null)
-            {
-                beartraps.SwitchTraps();
-            }
-            transform.position = startPos;
-            //this.GetComponent<BoxCollider2D>().enabled = true;
-            isResurrected = false;
-            Debug.Log("You die");
-            this.GetComponent<BoxCollider2D>().isTrigger = true;
-
-            if (tokenManager != null) //Call TokenManager OnDeath to reset tokens
-            {
-                tokenManager.OnDeath();
-            }
-
-
-            this.GetComponent<SpriteRenderer>().sprite = deadSprite;
-
+            beartraps.SwitchTraps();
         }
+        transform.position = startPos;
+        //this.GetComponent<BoxCollider2D>().enabled = true;
+        isResurrected = false;
+        Debug.Log("You die");
+        this.GetComponent<BoxCollider2D>().isTrigger = true;
+
+        if (tokenManager != null) //Call TokenManager OnDeath to reset tokens
+        {
+            tokenManager.OnDeath();
+        }
+
+
+        this.GetComponent<SpriteRenderer>().sprite = deadSprite;
+
+        
     }
 
     public void OnClick(InputAction.CallbackContext context)
