@@ -1,0 +1,1352 @@
+fileFormatVersion: 2
+guid: bcd8be2796d1e3f4cae85859eae0df3c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7004937262054766154
+    second: Barrier 2 SS_0
+  - first:
+      213: -3574436771196797511
+    second: Barrier 2 SS_1
+  - first:
+      213: -5867011214800882881
+    second: Barrier 2 SS_2
+  - first:
+      213: 3013404849148244717
+    second: Barrier 2 SS_3
+  - first:
+      213: -6736348677711299198
+    second: Barrier 2 SS_4
+  - first:
+      213: -7024572282127983231
+    second: Barrier 2 SS_5
+  - first:
+      213: -7569362322216014461
+    second: Barrier 2 SS_6
+  - first:
+      213: -8780663226894680764
+    second: Barrier 2 SS_7
+  - first:
+      213: 235479180600207705
+    second: Barrier 2 SS_8
+  - first:
+      213: 991365927329536204
+    second: Barrier 2 SS_9
+  - first:
+      213: -5087277452006062883
+    second: Barrier 2 SS_10
+  - first:
+      213: 3187031470603570353
+    second: Barrier 2 SS_11
+  - first:
+      213: 4701758290626263343
+    second: Barrier 2 SS_12
+  - first:
+      213: -3945167230084017608
+    second: Barrier 2 SS_13
+  - first:
+      213: -7438694070605913731
+    second: Barrier 2 SS_14
+  - first:
+      213: 2580572345089315190
+    second: Barrier 2 SS_15
+  - first:
+      213: 6955862565279332285
+    second: Barrier 2 SS_16
+  - first:
+      213: 7889942706099748475
+    second: Barrier 2 SS_17
+  - first:
+      213: -8682193384933858099
+    second: Barrier 2 SS_18
+  - first:
+      213: -8557599439832100633
+    second: Barrier 2 SS_19
+  - first:
+      213: -1482499977076895657
+    second: Barrier 2 SS_20
+  - first:
+      213: 6104784211696340928
+    second: Barrier 2 SS_21
+  - first:
+      213: 4035405878850602875
+    second: Barrier 2 SS_22
+  - first:
+      213: -3315270802237588630
+    second: Barrier 2 SS_23
+  - first:
+      213: 7373320444046845991
+    second: Barrier 2 SS_24
+  - first:
+      213: 8702337915634674459
+    second: Barrier 2 SS_25
+  - first:
+      213: 8641655339847366988
+    second: Barrier 2 SS_26
+  - first:
+      213: -6551755124831791710
+    second: Barrier 2 SS_27
+  - first:
+      213: -3986092238113437166
+    second: Barrier 2 SS_28
+  - first:
+      213: -8285498844512434418
+    second: Barrier 2 SS_29
+  - first:
+      213: -7371463623364852934
+    second: Barrier 2 SS_30
+  - first:
+      213: -3859518827993415900
+    second: Barrier 2 SS_31
+  - first:
+      213: -4203652361495599941
+    second: Barrier 2 SS_32
+  - first:
+      213: -3609626487052625163
+    second: Barrier 2 SS_33
+  - first:
+      213: 6831704382604618637
+    second: Barrier 2 SS_34
+  - first:
+      213: 328154254634656649
+    second: Barrier 2 SS_35
+  - first:
+      213: -1146202967874824798
+    second: Barrier 2 SS_36
+  - first:
+      213: 2896987400474497963
+    second: Barrier 2 SS_37
+  - first:
+      213: -6147666451748354065
+    second: Barrier 2 SS_38
+  - first:
+      213: -8640668124546589962
+    second: Barrier 2 SS_39
+  - first:
+      213: -7953055284212578947
+    second: Barrier 2 SS_40
+  - first:
+      213: 488631250225930914
+    second: Barrier 2 SS_41
+  - first:
+      213: 5380399963240364603
+    second: Barrier 2 SS_42
+  - first:
+      213: -3784987266037890313
+    second: Barrier 2 SS_43
+  - first:
+      213: 254049440955394897
+    second: Barrier 2 SS_44
+  - first:
+      213: -4299526913348623957
+    second: Barrier 2 SS_45
+  - first:
+      213: 1708351416792187206
+    second: Barrier 2 SS_46
+  - first:
+      213: 4769442120350675979
+    second: Barrier 2 SS_47
+  - first:
+      213: 2928222859262823331
+    second: Barrier 2 SS_48
+  - first:
+      213: 7868683936413838925
+    second: Barrier 2 SS_49
+  - first:
+      213: -2272057107371720973
+    second: Barrier 2 SS_50
+  - first:
+      213: -3755422013074304570
+    second: Barrier 2 SS_51
+  - first:
+      213: 5373855178851039103
+    second: Barrier 2 SS_52
+  - first:
+      213: 5990440593054675088
+    second: Barrier 2 SS_53
+  - first:
+      213: 8048047694287194659
+    second: Barrier 2 SS_54
+  - first:
+      213: -6741575018655568428
+    second: Barrier 2 SS_55
+  - first:
+      213: -6083664861390914120
+    second: Barrier 2 SS_56
+  - first:
+      213: -2564438544932619865
+    second: Barrier 2 SS_57
+  - first:
+      213: -7865127591184131250
+    second: Barrier 2 SS_58
+  - first:
+      213: 7586603967613028974
+    second: Barrier 2 SS_59
+  - first:
+      213: 7250664868626058849
+    second: Barrier 2 SS_60
+  - first:
+      213: -1855812221821804940
+    second: Barrier 2 SS_61
+  - first:
+      213: -4753581090927967456
+    second: Barrier 2 SS_62
+  - first:
+      213: -6605370716198856114
+    second: Barrier 2 SS_63
+  - first:
+      213: 4110463296698050104
+    second: Barrier 2 SS_64
+  - first:
+      213: 4999190607800515512
+    second: Barrier 2 SS_65
+  - first:
+      213: 491057871857327661
+    second: Barrier 2 SS_66
+  - first:
+      213: -6062261066654149908
+    second: Barrier 2 SS_67
+  - first:
+      213: -8544887496204408002
+    second: Barrier 2 SS_68
+  - first:
+      213: -5597439262488870561
+    second: Barrier 2 SS_69
+  - first:
+      213: 2543782710664539245
+    second: Barrier 2 SS_70
+  - first:
+      213: 5767466477870930233
+    second: Barrier 2 SS_71
+  - first:
+      213: 323645304518424413
+    second: Barrier 2 SS_72
+  - first:
+      213: -3308687873425928045
+    second: Barrier 2 SS_73
+  - first:
+      213: 447688132851024739
+    second: Barrier 2 SS_74
+  - first:
+      213: 5199648300151871171
+    second: Barrier 2 SS_75
+  - first:
+      213: 8556935385491155676
+    second: Barrier 2 SS_76
+  - first:
+      213: -8246734869242872468
+    second: Barrier 2 SS_77
+  - first:
+      213: -4865026749400282009
+    second: Barrier 2 SS_78
+  - first:
+      213: 2681239960450805291
+    second: Barrier 2 SS_79
+  - first:
+      213: 3954044703616836010
+    second: Barrier 2 SS_80
+  - first:
+      213: 9029804885751913941
+    second: Barrier 2 SS_81
+  - first:
+      213: -7458496786262489861
+    second: Barrier 2 SS_82
+  - first:
+      213: -8097695320523707925
+    second: Barrier 2 SS_83
+  - first:
+      213: 5371592511970988075
+    second: Barrier 2 SS_84
+  - first:
+      213: -6401788963753958021
+    second: Barrier 2 SS_85
+  - first:
+      213: 6996641577917665627
+    second: Barrier 2 SS_86
+  - first:
+      213: -2064263940941785055
+    second: Barrier 2 SS_87
+  - first:
+      213: 6673295817052051142
+    second: Barrier 2 SS_88
+  - first:
+      213: -1500278379096419631
+    second: Barrier 2 SS_89
+  - first:
+      213: 8470621274862973469
+    second: Barrier 2 SS_90
+  - first:
+      213: -3435462245445188269
+    second: Barrier 2 SS_91
+  - first:
+      213: -251001691681589053
+    second: Barrier 2 SS_92
+  - first:
+      213: -9087741827947692193
+    second: Barrier 2 SS_93
+  - first:
+      213: -9185646625854210040
+    second: Barrier 2 SS_94
+  - first:
+      213: 8359882422682433633
+    second: Barrier 2 SS_95
+  - first:
+      213: -2700036218417137215
+    second: Barrier 2 SS_96
+  - first:
+      213: -6129250729244284711
+    second: Barrier 2 SS_97
+  - first:
+      213: 4593166529732633578
+    second: Barrier 2 SS_98
+  - first:
+      213: -704518117282718123
+    second: Barrier 2 SS_99
+  - first:
+      213: 1789661093266353597
+    second: Barrier 2 SS_100
+  - first:
+      213: -4957680292034386067
+    second: Barrier 2 SS_101
+  - first:
+      213: 2797979555198521316
+    second: Barrier 2 SS_102
+  - first:
+      213: 5372091107659562859
+    second: Barrier 2 SS_103
+  - first:
+      213: 767458621321059443
+    second: Barrier 2 SS_104
+  - first:
+      213: 2454690565663659697
+    second: Barrier 2 SS_105
+  - first:
+      213: -565966905683850477
+    second: Barrier 2 SS_106
+  - first:
+      213: -5450724239548324674
+    second: Barrier 2 SS_107
+  - first:
+      213: -967518166330440973
+    second: Barrier 2 SS_108
+  - first:
+      213: 4379222593405898164
+    second: Barrier 2 SS_109
+  - first:
+      213: -2347216053574384457
+    second: Barrier 2 SS_110
+  - first:
+      213: 8092918507477886139
+    second: Barrier 2 SS_111
+  - first:
+      213: -7899453715170016124
+    second: Barrier 2 SS_112
+  - first:
+      213: -6188060028478873847
+    second: Barrier 2 SS_113
+  - first:
+      213: -5183538516367209623
+    second: Barrier 2 SS_114
+  - first:
+      213: 4014076539735096775
+    second: Barrier 2 SS_115
+  - first:
+      213: -1949271194946081471
+    second: Barrier 2 SS_116
+  - first:
+      213: 7885055734939274829
+    second: Barrier 2 SS_117
+  - first:
+      213: -2101583620191738064
+    second: Barrier 2 SS_118
+  - first:
+      213: 7584531317255518451
+    second: Barrier 2 SS_119
+  - first:
+      213: 8684951745093789063
+    second: Barrier 2 SS_120
+  - first:
+      213: -5366103991802156640
+    second: Barrier 2 SS_121
+  - first:
+      213: 2008824413386715458
+    second: Barrier 2 SS_122
+  - first:
+      213: 2207858894886180737
+    second: Barrier 2 SS_123
+  - first:
+      213: -6589304313412363218
+    second: Barrier 2 SS_124
+  - first:
+      213: 7557705289225991409
+    second: Barrier 2 SS_125
+  - first:
+      213: -2256578603542649224
+    second: Barrier 2 SS_126
+  - first:
+      213: 3364924868392723347
+    second: Barrier 2 SS_127
+  - first:
+      213: -2843236225684226494
+    second: Barrier 2 SS_128
+  - first:
+      213: 5264399355282356097
+    second: Barrier 2 SS_129
+  - first:
+      213: -1748283083034743632
+    second: Barrier 2 SS_130
+  - first:
+      213: -2038186392545485432
+    second: Barrier 2 SS_131
+  - first:
+      213: -2535804315709660611
+    second: Barrier 2 SS_132
+  - first:
+      213: -2893393854474351661
+    second: Barrier 2 SS_133
+  - first:
+      213: 5545825576630291749
+    second: Barrier 2 SS_134
+  - first:
+      213: 7868881085208402929
+    second: Barrier 2 SS_135
+  - first:
+      213: 4507131798936665045
+    second: Barrier 2 SS_136
+  - first:
+      213: 7736203830863405074
+    second: Barrier 2 SS_137
+  - first:
+      213: -7723954401982463803
+    second: Barrier 2 SS_138
+  - first:
+      213: 7014905111816334973
+    second: Barrier 2 SS_139
+  - first:
+      213: -8983302198133285915
+    second: Barrier 2 SS_140
+  - first:
+      213: -4023236348217313294
+    second: Barrier 2 SS_141
+  - first:
+      213: 2161275434607187865
+    second: Barrier 2 SS_142
+  - first:
+      213: 3225906544164941011
+    second: Barrier 2 SS_143
+  - first:
+      213: -8934117733792914828
+    second: Barrier 2 SS_144
+  - first:
+      213: 6963128672444324317
+    second: Barrier 2 SS_145
+  - first:
+      213: -5900716584347100049
+    second: Barrier 2 SS_146
+  - first:
+      213: 7457119028589088719
+    second: Barrier 2 SS_147
+  - first:
+      213: -1339048346793443434
+    second: Barrier 2 SS_148
+  - first:
+      213: 8588618136523488771
+    second: Barrier 2 SS_149
+  - first:
+      213: -2848165447377593082
+    second: Barrier 2 SS_150
+  - first:
+      213: -2653300896441043119
+    second: Barrier 2 SS_151
+  - first:
+      213: 2695452406450189517
+    second: Barrier 2 SS_152
+  - first:
+      213: -8247126229165899550
+    second: Barrier 2 SS_153
+  - first:
+      213: 1815959695147735100
+    second: Barrier 2 SS_154
+  - first:
+      213: -1324206604519459659
+    second: Barrier 2 SS_155
+  - first:
+      213: 4658644964791248644
+    second: Barrier 2 SS_156
+  - first:
+      213: -8189563243022799419
+    second: Barrier 2 SS_157
+  - first:
+      213: 1191696596819488411
+    second: Barrier 2 SS_158
+  - first:
+      213: -5588058227097526880
+    second: Barrier 2 SS_159
+  - first:
+      213: 6934559018197876795
+    second: Barrier 2 SS_160
+  - first:
+      213: -2894130982704541535
+    second: Barrier 2 SS_161
+  - first:
+      213: -1169667044531043645
+    second: Barrier 2 SS_162
+  - first:
+      213: 6054994409984422965
+    second: Barrier 2 SS_163
+  - first:
+      213: -9072591175276300540
+    second: Barrier 2 SS_164
+  - first:
+      213: 147703182949889641
+    second: Barrier 2 SS_165
+  - first:
+      213: -3320183471655182333
+    second: Barrier 2 SS_166
+  - first:
+      213: 6123681681145847134
+    second: Barrier 2 SS_167
+  - first:
+      213: -5237872072704975645
+    second: Barrier 2 SS_168
+  - first:
+      213: 3042535418089788396
+    second: Barrier 2 SS_169
+  - first:
+      213: -7469547412977316950
+    second: Barrier 2 SS_170
+  - first:
+      213: 5450818789302805897
+    second: Barrier 2 SS_171
+  - first:
+      213: 8991177898914360621
+    second: Barrier 2 SS_172
+  - first:
+      213: 6462455373157097087
+    second: Barrier 2 SS_173
+  - first:
+      213: -1007122988030397614
+    second: Barrier 2 SS_174
+  - first:
+      213: 9014261308899270817
+    second: Barrier 2 SS_175
+  - first:
+      213: -3122165158885591159
+    second: Barrier 2 SS_176
+  - first:
+      213: 1699609029699751890
+    second: Barrier 2 SS_177
+  - first:
+      213: 3876568187506087334
+    second: Barrier 2 SS_178
+  - first:
+      213: 6212855494642081650
+    second: Barrier 2 SS_179
+  - first:
+      213: -3436969821621871329
+    second: Barrier 2 SS_180
+  - first:
+      213: 8419593065430972657
+    second: Barrier 2 SS_181
+  - first:
+      213: -6088017125970068766
+    second: Barrier 2 SS_182
+  - first:
+      213: 7009966971269213191
+    second: Barrier 2 SS_183
+  - first:
+      213: 7882235014249191317
+    second: Barrier 2 SS_184
+  - first:
+      213: 9146923359068357114
+    second: Barrier 2 SS_185
+  - first:
+      213: -4957988279597267089
+    second: Barrier 2 SS_186
+  - first:
+      213: -1580670486866088483
+    second: Barrier 2 SS_187
+  - first:
+      213: -6675272339933820593
+    second: Barrier 2 SS_188
+  - first:
+      213: -1832319831040740538
+    second: Barrier 2 SS_189
+  - first:
+      213: 7835824937498827679
+    second: Barrier 2 SS_190
+  - first:
+      213: -3279644810966061207
+    second: Barrier 2 SS_191
+  - first:
+      213: -2754651225079474011
+    second: Barrier 2 SS_192
+  - first:
+      213: -1778091430723170728
+    second: Barrier 2 SS_193
+  - first:
+      213: -351490824977129397
+    second: Barrier 2 SS_194
+  - first:
+      213: -1939091766951199532
+    second: Barrier 2 SS_195
+  - first:
+      213: 534457065088057858
+    second: Barrier 2 SS_196
+  - first:
+      213: 1316534921715752939
+    second: Barrier 2 SS_197
+  - first:
+      213: -344676130304861811
+    second: Barrier 2 SS_198
+  - first:
+      213: -7144629340859819808
+    second: Barrier 2 SS_199
+  - first:
+      213: 743201353515690413
+    second: Barrier 2 SS_200
+  - first:
+      213: -8754718181583134780
+    second: Barrier 2 SS_201
+  - first:
+      213: -419255608979069542
+    second: Barrier 2 SS_202
+  - first:
+      213: -6108977627411864811
+    second: Barrier 2 SS_203
+  - first:
+      213: 6216132109660365790
+    second: Barrier 2 SS_204
+  - first:
+      213: 2099603646912951804
+    second: Barrier 2 SS_205
+  - first:
+      213: 1171970068952227067
+    second: Barrier 2 SS_206
+  - first:
+      213: 1336200727511093002
+    second: Barrier 2 SS_207
+  - first:
+      213: -1456585206780166706
+    second: Barrier 2 SS_208
+  - first:
+      213: 4573295554606699328
+    second: Barrier 2 SS_209
+  - first:
+      213: -5688849217974461544
+    second: Barrier 2 SS_210
+  - first:
+      213: -5238846427706437872
+    second: Barrier 2 SS_211
+  - first:
+      213: -7607713859975201363
+    second: Barrier 2 SS_212
+  - first:
+      213: -7823503694370042603
+    second: Barrier 2 SS_213
+  - first:
+      213: 891120735921831986
+    second: Barrier 2 SS_214
+  - first:
+      213: 1476322966931822027
+    second: Barrier 2 SS_215
+  - first:
+      213: -8514105056769757902
+    second: Barrier 2 SS_216
+  - first:
+      213: -6987287416224528139
+    second: Barrier 2 SS_217
+  - first:
+      213: -4803591539935049548
+    second: Barrier 2 SS_218
+  - first:
+      213: -5243062452120984600
+    second: Barrier 2 SS_219
+  - first:
+      213: 2926694747983963909
+    second: Barrier 2 SS_220
+  - first:
+      213: 6698111199743312587
+    second: Barrier 2 SS_221
+  - first:
+      213: -2913577104696389599
+    second: Barrier 2 SS_222
+  - first:
+      213: 1530978824787035996
+    second: Barrier 2 SS_223
+  - first:
+      213: 5417168714130539108
+    second: Barrier 2 SS_224
+  - first:
+      213: 6792968061660677833
+    second: Barrier 2 SS_225
+  - first:
+      213: -2888690851870776222
+    second: Barrier 2 SS_226
+  - first:
+      213: -3772105193997925650
+    second: Barrier 2 SS_227
+  - first:
+      213: -6386956851487683217
+    second: Barrier 2 SS_228
+  - first:
+      213: 1005371850530090821
+    second: Barrier 2 SS_229
+  - first:
+      213: 4653694214466508363
+    second: Barrier 2 SS_230
+  - first:
+      213: 3633837468320418387
+    second: Barrier 2 SS_231
+  - first:
+      213: -8839885607962737973
+    second: Barrier 2 SS_232
+  - first:
+      213: 2584370573958098026
+    second: Barrier 2 SS_233
+  - first:
+      213: 3362384234136339898
+    second: Barrier 2 SS_234
+  - first:
+      213: 6620754868360632473
+    second: Barrier 2 SS_235
+  - first:
+      213: -192532050833197839
+    second: Barrier 2 SS_236
+  - first:
+      213: -4715525714338715980
+    second: Barrier 2 SS_237
+  - first:
+      213: 6361296840550471171
+    second: Barrier 2 SS_238
+  - first:
+      213: 3049563830648716986
+    second: Barrier 2 SS_239
+  - first:
+      213: -7029854091044574055
+    second: Barrier 2 SS_240
+  - first:
+      213: 2128423648252417764
+    second: Barrier 2 SS_241
+  - first:
+      213: 2401127481116167410
+    second: Barrier 2 SS_242
+  - first:
+      213: 3502370188393624246
+    second: Barrier 2 SS_243
+  - first:
+      213: -1169123628538036137
+    second: Barrier 2 SS_244
+  - first:
+      213: -853026502424084144
+    second: Barrier 2 SS_245
+  - first:
+      213: 4672578896799003198
+    second: Barrier 2 SS_246
+  - first:
+      213: -7766741230861498359
+    second: Barrier 2 SS_247
+  - first:
+      213: 5466457239848789742
+    second: Barrier 2 SS_248
+  - first:
+      213: -8907922865301998780
+    second: Barrier 2 SS_249
+  - first:
+      213: 3418338269772206695
+    second: Barrier 2 SS_250
+  - first:
+      213: -3418748784098659290
+    second: Barrier 2 SS_251
+  - first:
+      213: -235012062239526917
+    second: Barrier 2 SS_252
+  - first:
+      213: -5456680247624541492
+    second: Barrier 2 SS_253
+  - first:
+      213: 1289493959820984600
+    second: Barrier 2 SS_254
+  - first:
+      213: 8890951303488891804
+    second: Barrier 2 SS_255
+  - first:
+      213: 4807619346014114413
+    second: Barrier 2 SS_256
+  - first:
+      213: -8155853597061842467
+    second: Barrier 2 SS_257
+  - first:
+      213: -8493185413497995867
+    second: Barrier 2 SS_258
+  - first:
+      213: 912944526580459827
+    second: Barrier 2 SS_259
+  - first:
+      213: -4587851295148446098
+    second: Barrier 2 SS_260
+  - first:
+      213: 4346077313275491125
+    second: Barrier 2 SS_261
+  - first:
+      213: 1579161502340215520
+    second: Barrier 2 SS_262
+  - first:
+      213: 7798290595432545224
+    second: Barrier 2 SS_263
+  - first:
+      213: -8834222267897472166
+    second: Barrier 2 SS_264
+  - first:
+      213: -8080057471512080871
+    second: Barrier 2 SS_265
+  - first:
+      213: -8265349654375939650
+    second: Barrier 2 SS_266
+  - first:
+      213: 387837939158303081
+    second: Barrier 2 SS_267
+  - first:
+      213: 3129933822208605224
+    second: Barrier 2 SS_268
+  - first:
+      213: -2445478542232875969
+    second: Barrier 2 SS_269
+  - first:
+      213: -5266489102475392330
+    second: Barrier 2 SS_270
+  - first:
+      213: 4600770632800592084
+    second: Barrier 2 SS_271
+  - first:
+      213: -3941108858159021024
+    second: Barrier 2 SS_272
+  - first:
+      213: 4342005676581038896
+    second: Barrier 2 SS_273
+  - first:
+      213: -3110074570403606894
+    second: Barrier 2 SS_274
+  - first:
+      213: 6674215741088551738
+    second: Barrier 2 SS_275
+  - first:
+      213: 77444453592474966
+    second: Barrier 2 SS_276
+  - first:
+      213: 6427565156868653294
+    second: Barrier 2 SS_277
+  - first:
+      213: 4108546253468964703
+    second: Barrier 2 SS_278
+  - first:
+      213: -8183090332840802234
+    second: Barrier 2 SS_279
+  - first:
+      213: 5283150856419486973
+    second: Barrier 2 SS_280
+  - first:
+      213: -6690853982783865132
+    second: Barrier 2 SS_281
+  - first:
+      213: -100163819254729836
+    second: Barrier 2 SS_282
+  - first:
+      213: -2708628741941587392
+    second: Barrier 2 SS_283
+  - first:
+      213: 6774641376455727578
+    second: Barrier 2 SS_284
+  - first:
+      213: -343795508803939137
+    second: Barrier 2 SS_285
+  - first:
+      213: 1932288782904803852
+    second: Barrier 2 SS_286
+  - first:
+      213: -7063295117025752099
+    second: Barrier 2 SS_287
+  - first:
+      213: 6945081928888931938
+    second: Barrier 2 SS_288
+  - first:
+      213: -2418524990755363057
+    second: Barrier 2 SS_289
+  - first:
+      213: -3892763705872558925
+    second: Barrier 2 SS_290
+  - first:
+      213: -1785693650560124428
+    second: Barrier 2 SS_291
+  - first:
+      213: -9078277910335209887
+    second: Barrier 2 SS_292
+  - first:
+      213: -1916828934602780056
+    second: Barrier 2 SS_293
+  - first:
+      213: -1569866529361087603
+    second: Barrier 2 SS_294
+  - first:
+      213: 2952976969995043989
+    second: Barrier 2 SS_295
+  - first:
+      213: 4216437730484502360
+    second: Barrier 2 SS_296
+  - first:
+      213: -3918965053472077910
+    second: Barrier 2 SS_297
+  - first:
+      213: 2860599317652682156
+    second: Barrier 2 SS_298
+  - first:
+      213: 8303990502454332032
+    second: Barrier 2 SS_299
+  - first:
+      213: 5151951454577904611
+    second: Barrier 2 SS_300
+  - first:
+      213: 2632997219133492998
+    second: Barrier 2 SS_301
+  - first:
+      213: 9097921948642595421
+    second: Barrier 2 SS_302
+  - first:
+      213: -4883074726166061845
+    second: Barrier 2 SS_303
+  - first:
+      213: -3118999409545075495
+    second: Barrier 2 SS_304
+  - first:
+      213: 659890508041922303
+    second: Barrier 2 SS_305
+  - first:
+      213: -251327102154115630
+    second: Barrier 2 SS_306
+  - first:
+      213: 5979053476661037988
+    second: Barrier 2 SS_307
+  - first:
+      213: -4626243120225986070
+    second: Barrier 2 SS_308
+  - first:
+      213: 4057665165301997604
+    second: Barrier 2 SS_309
+  - first:
+      213: 4871052411389668098
+    second: Barrier 2 SS_310
+  - first:
+      213: 7742647180223669425
+    second: Barrier 2 SS_311
+  - first:
+      213: -1397873473499171105
+    second: Barrier 2 SS_312
+  - first:
+      213: -1930429165876349564
+    second: Barrier 2 SS_313
+  - first:
+      213: -7122694071499566339
+    second: Barrier 2 SS_314
+  - first:
+      213: -6965919863029404532
+    second: Barrier 2 SS_315
+  - first:
+      213: 8099877923703877186
+    second: Barrier 2 SS_316
+  - first:
+      213: 8951315719616776131
+    second: Barrier 2 SS_317
+  - first:
+      213: 4862919800049073491
+    second: Barrier 2 SS_318
+  - first:
+      213: 7071360023531596282
+    second: Barrier 2 SS_319
+  - first:
+      213: -8112375195975896279
+    second: Barrier 2 SS_320
+  - first:
+      213: 2256335245813145279
+    second: Barrier 2 SS_321
+  - first:
+      213: 6370969813809915574
+    second: Barrier 2 SS_322
+  - first:
+      213: -3788767362356151720
+    second: Barrier 2 SS_323
+  - first:
+      213: 3412591864641554402
+    second: Barrier 2 SS_324
+  - first:
+      213: 1822318142499207103
+    second: Barrier 2 SS_325
+  - first:
+      213: 7172834559085025428
+    second: Barrier 2 SS_326
+  - first:
+      213: -7395454381764752923
+    second: Barrier 2 SS_327
+  - first:
+      213: -3960850061495788962
+    second: Barrier 2 SS_328
+  - first:
+      213: 4799005258945266334
+    second: Barrier 2 SS_329
+  - first:
+      213: -6860414262252409051
+    second: Barrier 2 SS_330
+  - first:
+      213: 5389387290205013812
+    second: Barrier 2 SS_331
+  - first:
+      213: 3899845128902260161
+    second: Barrier 2 SS_332
+  - first:
+      213: -2053838734355105975
+    second: Barrier 2 SS_333
+  - first:
+      213: 4802100928202364569
+    second: Barrier 2 SS_334
+  - first:
+      213: 7650867478134496523
+    second: Barrier 2 SS_335
+  - first:
+      213: -6417937868803708359
+    second: Barrier 2 SS_336
+  - first:
+      213: 412249342508777606
+    second: Barrier 2 SS_337
+  - first:
+      213: -1940920798776232121
+    second: Barrier 2 SS_338
+  - first:
+      213: 1181374268569972131
+    second: Barrier 2 SS_339
+  - first:
+      213: 7539475160242833353
+    second: Barrier 2 SS_340
+  - first:
+      213: 7040328956754118482
+    second: Barrier 2 SS_341
+  - first:
+      213: -3346701835906245553
+    second: Barrier 2 SS_342
+  - first:
+      213: 6893532558018251304
+    second: Barrier 2 SS_343
+  - first:
+      213: 3125594479706411800
+    second: Barrier 2 SS_344
+  - first:
+      213: -1502387780728482493
+    second: Barrier 2 SS_345
+  - first:
+      213: -5943177037526381483
+    second: Barrier 2 SS_346
+  - first:
+      213: 4210413083835898823
+    second: Barrier 2 SS_347
+  - first:
+      213: 6468506128541354600
+    second: Barrier 2 SS_348
+  - first:
+      213: 1054258385423790334
+    second: Barrier 2 SS_349
+  - first:
+      213: -8655083019311880568
+    second: Barrier 2 SS_350
+  - first:
+      213: -2415912633785089828
+    second: Barrier 2 SS_351
+  - first:
+      213: 507750593481800798
+    second: Barrier 2 SS_352
+  - first:
+      213: 7271620671222249871
+    second: Barrier 2 SS_353
+  - first:
+      213: -38041110863868938
+    second: Barrier 2 SS_354
+  - first:
+      213: 1263163069497633431
+    second: Barrier 2 SS_355
+  - first:
+      213: 8178380031768731813
+    second: Barrier 2 SS_356
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Barrier 2 SS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2394
+        width: 4096
+        height: 2394
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b904558ca679ce90800000000000000
+      internalID: -7004937262054766154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrier 2 SS_1
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2394
+        width: 4096
+        height: 2394
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd78bcd1bc056ec0800000000000000
+      internalID: -3574436771196797511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrier 2 SS_2
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 2394
+        width: 4096
+        height: 2394
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f337f888260349ea0800000000000000
+      internalID: -5867011214800882881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrier 2 SS_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 4096
+        height: 2394
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2bbed9eb3c1d920800000000000000
+      internalID: 3013404849148244717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrier 2 SS_4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 4096
+        height: 2394
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d78dd719ea382a0800000000000000
+      internalID: -6736348677711299198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrier 2 SS_5
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 0
+        width: 4096
+        height: 2394
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18dd4b82ab4b38e90800000000000000
+      internalID: -7024572282127983231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 61879e73b70574c49834b5e0cdc7f26c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Barrier 2 SS_0: -7004937262054766154
+      Barrier 2 SS_1: -3574436771196797511
+      Barrier 2 SS_2: -5867011214800882881
+      Barrier 2 SS_3: 3013404849148244717
+      Barrier 2 SS_4: -6736348677711299198
+      Barrier 2 SS_5: -7024572282127983231
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
