@@ -2637,6 +2637,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 925601858149861995, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Size.x
+      value: 16.628334
+      objectReference: {fileID: 0}
+    - target: {fileID: 925601858149861995, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Offset.x
+      value: -2.5141666
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095832481215581126, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Size.x
+      value: 17.533998
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095832481215581126, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Offset.x
+      value: 3.0169992
+      objectReference: {fileID: 0}
     - target: {fileID: 5750777998701290849, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.219009
@@ -2680,6 +2696,30 @@ PrefabInstance:
     - target: {fileID: 7561084517859326167, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Name
       value: KillOutsidebox
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964527388703363858, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Size.x
+      value: 63.252357
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964527388703363858, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Size.y
+      value: 7.1284566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964527388703363858, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Offset.x
+      value: -5.468315
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964527388703363858, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.1942284
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132110466548201272, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Size.y
+      value: 12.284081
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132110466548201272, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.1370406
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

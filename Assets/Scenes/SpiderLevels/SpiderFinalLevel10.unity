@@ -11311,27 +11311,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 925601858149861995, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Size.x
-      value: 24.825764
+      value: 16.52901
+      objectReference: {fileID: 0}
+    - target: {fileID: 925601858149861995, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Size.y
+      value: 48.372826
       objectReference: {fileID: 0}
     - target: {fileID: 925601858149861995, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Offset.x
-      value: 22.134783
+      value: 26.28316
+      objectReference: {fileID: 0}
+    - target: {fileID: 925601858149861995, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
+      propertyPath: m_Offset.y
+      value: 7.4167852
       objectReference: {fileID: 0}
     - target: {fileID: 2095832481215581126, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Size.x
-      value: 13.612446
+      value: 20.65211
       objectReference: {fileID: 0}
     - target: {fileID: 2095832481215581126, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Size.y
-      value: 29.823614
+      value: 54.211018
       objectReference: {fileID: 0}
     - target: {fileID: 2095832481215581126, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Offset.x
-      value: 1.0562229
+      value: 4.5760555
       objectReference: {fileID: 0}
     - target: {fileID: 2095832481215581126, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Offset.y
-      value: -0.9184542
+      value: 11.275248
       objectReference: {fileID: 0}
     - target: {fileID: 5750777998701290849, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11379,19 +11387,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7964527388703363858, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Size.x
-      value: 46.04508
+      value: 97.96257
       objectReference: {fileID: 0}
     - target: {fileID: 7964527388703363858, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Size.y
-      value: 9.883352
+      value: 30.499508
       objectReference: {fileID: 0}
     - target: {fileID: 7964527388703363858, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Offset.x
-      value: 11.572542
+      value: 22.194893
       objectReference: {fileID: 0}
     - target: {fileID: 7964527388703363858, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Offset.y
-      value: 6.2454987
+      value: 16.553576
       objectReference: {fileID: 0}
     - target: {fileID: 8132110466548201272, guid: ece059179f78ac4428bc1a1dd08efe5b, type: 3}
       propertyPath: m_Size.x
@@ -18067,7 +18075,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.33, y: 1.93}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
