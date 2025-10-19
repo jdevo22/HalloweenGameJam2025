@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/FinalLevels/FinalLevel6.unity
     guid: b7774ba5e4109a3439cf63ff47378156
   - enabled: 1
-    path: Assets/Scenes/FinalLevels/FinalLevel0.unity
+    path: Assets/Scenes/SpiderLevels/FinalLevel0.unity
     guid: 28aa01645e9443042a92f6d9542ec017
   - enabled: 1
     path: Assets/Scenes/SpiderLevels/SpiderFinalLevel1.unity
@@ -48,7 +48,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SpiderLevels/SpiderFinalLevel5.unity
     guid: 5730f8428fef7c84e8b7238205476669
   - enabled: 1
-    path: Assets/Scenes/FinalLevels/CreditsScene.unity
+    path: Assets/Scenes/SpiderLevels/CreditsScene.unity
     guid: ba949580cd6f76c468ca3ea79c009e08
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
