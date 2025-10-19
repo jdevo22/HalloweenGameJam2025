@@ -1624,6 +1624,10 @@ PrefabInstance:
       propertyPath: rayLength
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7233909045209558530, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
+      propertyPath: holdDuration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8265317305523577974, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
       propertyPath: m_DynamicOccludee
       value: 1
