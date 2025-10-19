@@ -22733,10 +22733,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 547984544878475242, guid: ce8fe77820c3deb44a92f4a1d224e88c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7393263173975309893, guid: ce8fe77820c3deb44a92f4a1d224e88c, type: 3}
       propertyPath: m_Name
       value: BearTrap (13)
