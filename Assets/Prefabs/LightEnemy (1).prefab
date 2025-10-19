@@ -380,6 +380,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   lightShapeController: {fileID: 7058609618211167990}
+  shrinkGrowDuration: 0.25
+  holdDuration: 5
 --- !u!114 &6913366451544737959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PathNode: []
-  Player: {fileID: 5345780843172220339}
   MoveSpeed: 1
+  MouseClickedPlayer: 0
   nodes1: {fileID: 0}
   nodes2: {fileID: 0}

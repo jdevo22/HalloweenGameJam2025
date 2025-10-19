@@ -1,8 +1,7 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
-using UnityEngine.U2D;
+using System.Collections;
 
 /// <summary>
 /// This script makes a 2D GameObject continuously follow the mouse cursor's position in the game world.
@@ -51,36 +50,22 @@ public class MouseFollower : MonoBehaviour
     private Vector2 externalMovementOffset = Vector2.zero;
     private float destabilizeTimer = 0f;
 
-    public Transform lightTransform;
-    private Vector2 lightPos;
+    public Transform[] lightTransform;
 
     private Quaternion targetRotation; // For Sprite Direction
 
     private bool isResurrected = false;
-    private LightMovement light = new LightMovement();
-    public BearTrapManager beartraps =new BearTrapManager();
+    public BearTrapManager beartraps = new BearTrapManager();
+    private LightMovement[] light;
     public TokenManager tokenManager; //Drag into component in inspector
-    public SpriteRenderer[] spriteRenderers;    //turning all the level sprite renderers off at the beginning of each level
-    public SpriteShapeRenderer[] spriteShapeRenderers; //turning all the level sprite shape renderers off at the beginning of each level
 
-
-    void Awake()
-    {
-        for (int i = 0; i < spriteRenderers.Length; i++)
-        {
-            spriteRenderers[i].enabled = false;
-        }
-        for (int j = 0; j < spriteShapeRenderers.Length; j++)
-        {
-            spriteShapeRenderers[j].enabled = false;
-        }
-
-    }
     /// <summary>
     /// Called when the script instance is being loaded.
     /// </summary>
     void Start()
     {
+        light = new LightMovement[lightTransform.Length];
+        Debug.Log(light.Length);
         startPos = transform.position;
         mainCamera = Camera.main;
         if (mainCamera == null)
@@ -88,9 +73,10 @@ public class MouseFollower : MonoBehaviour
             Debug.LogError("MouseFollower Script Error: No main camera found. Tag a camera as 'MainCamera'.");
         }
 
-        this.GetComponent<SpriteRenderer>().color = Color.red;
-
-        light = lightTransform.GetComponent<LightMovement>();
+        for (int i = 0; i < lightTransform.Length; i++)
+        {
+            light[i] = lightTransform[i].GetComponent<LightMovement>();
+        }
     }
 
     /// <summary>
@@ -98,7 +84,6 @@ public class MouseFollower : MonoBehaviour
     /// </summary>
     void Update()
     {
-        lightPos = lightTransform.position;
         if (mainCamera == null || !isResurrected) return;
 
         // Get the mouse position in world coordinates.
@@ -136,11 +121,6 @@ public class MouseFollower : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, mouseWorldPosition, currentSpeed * Time.deltaTime);
         }
         // If either check fails, the object stops moving.
-
-        //Raycast to light for death check
-        RaycastHit2D lightCheck = Physics2D.Raycast(this.transform.position, lightPos, 100, blockingLayers);
-
-        Debug.DrawRay(transform.position, (Vector2)lightPos - (Vector2)transform.position, rayColor);
 
 
         //Mouse sprite point direction
@@ -198,11 +178,15 @@ public class MouseFollower : MonoBehaviour
 
     public void OnDeath()
     {
-        light.OnReset();
-        if (beartraps != null) {
+        for (int i = 0; i < light.Length; i++)
+        {
+            light[i].OnReset();
+        }
+
+        if (beartraps != null)
+        {
             beartraps.SwitchTraps();
         }
-        
         transform.position = startPos;
         //this.GetComponent<BoxCollider2D>().enabled = true;
         isResurrected = false;
@@ -217,14 +201,6 @@ public class MouseFollower : MonoBehaviour
 
         this.GetComponent<SpriteRenderer>().sprite = deadSprite;
 
-        //Disable every sprite renderers except the player
-        for (int i = 0; i < spriteRenderers.Length; i++) {
-            spriteRenderers[i].enabled = false;
-        }
-        for (int j = 0; j < spriteShapeRenderers.Length; j++)
-        {
-            spriteShapeRenderers[j].enabled = false;
-        }
         
     }
 
@@ -234,24 +210,17 @@ public class MouseFollower : MonoBehaviour
         if (!context.started) return;
         var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         if (!rayHit.collider) return;
-        Debug.Log("collider Hit");
         if (rayHit.collider.tag == "Player")
         {
-            Debug.Log("player1");
             isResurrected = true;
             this.GetComponent<SpriteRenderer>().sprite = liveSprite;
-            light.MouseClickedPlayer = true;
-        }
-        //Enable every sprite renderers once player is clicked
-        for (int i = 0; i < spriteRenderers.Length; i++)
-        {
-            spriteRenderers[i].enabled = true;
-        }
-        for (int j = 0; j < spriteShapeRenderers.Length; j++)
-        {
-            spriteShapeRenderers[j].enabled = true;
         }
 
+        for (int i = 0; i < light.Length; i++)
+        {
+            light[i].MouseClickedPlayer = true;
+        }
+        
 
     }
 
