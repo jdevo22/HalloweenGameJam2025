@@ -275,6 +275,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  deathTime: 0.2
 --- !u!58 &4044640756304747093
 CircleCollider2D:
   m_ObjectHideFlags: 0
