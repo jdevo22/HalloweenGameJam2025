@@ -62,7 +62,7 @@ public class MouseFollower : MonoBehaviour
     public TokenManager tokenManager; //Drag into component in inspector
     public SpriteRenderer[] spriteRenderers;    //turning all the level sprite renderers off at the beginning of each level
     public SpriteShapeRenderer[] spriteShapeRenderers; //turning all the level sprite shape renderers off at the beginning of each level
-
+    public BeginnerTutorialManager beginnerTutorialManage=new BeginnerTutorialManager();   
 
     void Awake()
     {
@@ -241,6 +241,10 @@ public class MouseFollower : MonoBehaviour
             isResurrected = true;
             this.GetComponent<SpriteRenderer>().sprite = liveSprite;
             light.MouseClickedPlayer = true;
+            if (beginnerTutorialManage != null)
+            {
+                beginnerTutorialManage.GreenCircleBlinking = false;
+            }
         }
         //Enable every sprite renderers once player is clicked
         for (int i = 0; i < spriteRenderers.Length; i++)
