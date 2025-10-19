@@ -50,14 +50,13 @@ public class MouseFollower : MonoBehaviour
     private Vector2 externalMovementOffset = Vector2.zero;
     private float destabilizeTimer = 0f;
 
-    public Transform lightTransform;
-    private Vector2 lightPos;
+    public Transform[] lightTransform;
 
     private Quaternion targetRotation; // For Sprite Direction
 
     private bool isResurrected = false;
-    private LightMovement light = new LightMovement();
     public BearTrapManager beartraps = new BearTrapManager();
+    private LightMovement[] light;
     public TokenManager tokenManager; //Drag into component in inspector
 
     /// <summary>
@@ -65,6 +64,8 @@ public class MouseFollower : MonoBehaviour
     /// </summary>
     void Start()
     {
+        light = new LightMovement[lightTransform.Length];
+        Debug.Log(light.Length);
         startPos = transform.position;
         mainCamera = Camera.main;
         if (mainCamera == null)
@@ -72,9 +73,10 @@ public class MouseFollower : MonoBehaviour
             Debug.LogError("MouseFollower Script Error: No main camera found. Tag a camera as 'MainCamera'.");
         }
 
-        this.GetComponent<SpriteRenderer>().color = Color.red;
-
-        light = lightTransform.GetComponent<LightMovement>();
+        for (int i = 0; i < lightTransform.Length; i++)
+        {
+            light[i] = lightTransform[i].GetComponent<LightMovement>();
+        }
     }
 
     /// <summary>
@@ -82,7 +84,6 @@ public class MouseFollower : MonoBehaviour
     /// </summary>
     void Update()
     {
-        lightPos = lightTransform.position;
         if (mainCamera == null || !isResurrected) return;
 
         // Get the mouse position in world coordinates.
@@ -120,11 +121,6 @@ public class MouseFollower : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, mouseWorldPosition, currentSpeed * Time.deltaTime);
         }
         // If either check fails, the object stops moving.
-
-        //Raycast to light for death check
-        RaycastHit2D lightCheck = Physics2D.Raycast(this.transform.position, lightPos, 100, blockingLayers);
-
-        Debug.DrawRay(transform.position, (Vector2)lightPos - (Vector2)transform.position, rayColor);
 
 
         //Mouse sprite point direction
@@ -182,7 +178,11 @@ public class MouseFollower : MonoBehaviour
 
     public void OnDeath()
     {
-        light.OnReset();
+        for (int i = 0; i < light.Length; i++)
+        {
+            light[i].OnReset();
+        }
+
         if (beartraps != null)
         {
             beartraps.SwitchTraps();
@@ -200,6 +200,7 @@ public class MouseFollower : MonoBehaviour
 
 
         this.GetComponent<SpriteRenderer>().sprite = deadSprite;
+
         
     }
 
@@ -209,14 +210,17 @@ public class MouseFollower : MonoBehaviour
         if (!context.started) return;
         var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         if (!rayHit.collider) return;
-        Debug.Log("collider Hit");
         if (rayHit.collider.tag == "Player")
         {
-            Debug.Log("player1");
             isResurrected = true;
             this.GetComponent<SpriteRenderer>().sprite = liveSprite;
         }
-        light.MouseClickedPlayer = true;
+
+        for (int i = 0; i < light.Length; i++)
+        {
+            light[i].MouseClickedPlayer = true;
+        }
+        
 
     }
 
