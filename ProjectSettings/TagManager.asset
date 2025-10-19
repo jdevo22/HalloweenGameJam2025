@@ -6,6 +6,8 @@ TagManager:
   tags:
   - light
   - trap
+  - obstacle
+  - token
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - UI
   - Boundary
   - Player
-  - 
+  - light
   - 
   - 
   - 
