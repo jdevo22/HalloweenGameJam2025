@@ -9,10 +9,14 @@ public class BearTrap : MonoBehaviour
 
     private bool triggered = false;
 
+    private GameObject lightTest;
+
     private void Awake()
     {
         spriteRenderer = this.GetComponent<SpriteRenderer>();
         HideTrap();
+
+        lightTest = GameObject.Find("LightEnemy (1)");
     }
 
     public void RevealTrap()
@@ -34,7 +38,9 @@ public class BearTrap : MonoBehaviour
 
         Debug.Log("Object is Player");
 
-        MouseFollower player = collision.GetComponent<MouseFollower>();            
+        MouseFollower player = collision.GetComponent<MouseFollower>();
+
+        lightTest.GetComponent<LightTest2>().ResetRays(1);
 
         if (player != null && !triggered)
         {

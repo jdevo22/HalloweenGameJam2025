@@ -1374,6 +1374,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'lightTransform.Array.data[0]'
+      value: 
+      objectReference: {fileID: 405525869}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
       propertyPath: 'spriteRenderers.Array.data[0]'
       value: 
       objectReference: {fileID: 195286911}

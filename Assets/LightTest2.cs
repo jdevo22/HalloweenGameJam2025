@@ -18,7 +18,7 @@ public class LightTest2 : MonoBehaviour
     [Tooltip("How long the shrink and grow animations take.")]
     public float shrinkGrowDuration = 0.25f;
     [Tooltip("How long the light stays small.")]
-    public float holdDuration = 15f;
+    public float holdDuration = 1f;
 
     private MouseFollower player;
     private float initialRayLength;
@@ -28,10 +28,74 @@ public class LightTest2 : MonoBehaviour
 
     private bool seesPlayer;
 
+    private List<GameObject> otherLightTests = new List<GameObject>();
+
     void Awake()
     {
         initialRayLength = rayLength;
         bearTrapList = new List<BearTrap>();
+
+        if(transform.name == "LightEnemy (1)")
+        {
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (2)"));
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (3)"));
+            }
+            catch
+            {
+
+            }
+        }
+
+        if (transform.name == "LightEnemy (2)")
+        {
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (1)"));
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (3)"));
+            }
+            catch
+            {
+
+            }
+        }
+
+        if (transform.name == "LightEnemy (3)")
+        {
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (2)"));
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (1)"));
+            }
+            catch
+            {
+
+            }
+        }
+
+        Debug.Log(otherLightTests.Count + "other light tests");
     }
 
     void OnEnable()
@@ -157,10 +221,34 @@ public class LightTest2 : MonoBehaviour
         {
             player.OnDeath();
             player.GetComponent<BoxCollider2D>().enabled = false;
+            ResetRays(0);
+            for (int i = 0; i < otherLightTests.Count; i++)
+            {
+                if (otherLightTests[i] != null)
+                {
+                    otherLightTests[i].GetComponent<LightTest2>().ResetRays(0);
+                }
+            }
             rayLength = initialRayLength;
         }
 
 
+    }
+
+    public void ResetRays(int id)
+    {
+        rayLength = initialRayLength;
+
+        if(id == 1)
+        {
+            for (int i = 0; i < otherLightTests.Count; i++)
+            {
+                if (otherLightTests[i] != null)
+                {
+                    otherLightTests[i].GetComponent<LightTest2>().ResetRays(0);
+                }
+            }
+        }
     }
 
 

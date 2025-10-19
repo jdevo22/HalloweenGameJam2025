@@ -3265,6 +3265,10 @@ PrefabInstance:
       propertyPath: lightTransform
       value: 
       objectReference: {fileID: 2118461303}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'lightTransform.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2118461303}
     - target: {fileID: 4853755957622494503, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
