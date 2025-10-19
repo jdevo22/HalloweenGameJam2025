@@ -354,7 +354,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
+  m_Color: {r: 0.4509804, g: 0.44705883, b: 0.44705883, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -914,6 +914,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &797311390 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9214898837687103776, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
+  m_PrefabInstance: {fileID: 569518569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &839074430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PathNode: []
-  LightEnemy: {fileID: 0}
   MoveSpeed: 1
   MouseClickedPlayer: 0
   nodes1: {fileID: 120751012}
@@ -1365,6 +1369,34 @@ PrefabInstance:
       propertyPath: lightTransform
       value: 
       objectReference: {fileID: 405525869}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: spriteRenderers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'lightTransform.Array.data[0]'
+      value: 
+      objectReference: {fileID: 405525869}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 195286911}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 797311390}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1716947843}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: spriteShapeRenderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'spriteShapeRenderers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1530811899}
     - target: {fileID: 4853755957622494503, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
@@ -1414,6 +1446,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+--- !u!1971053207 &1530811899 stripped
+SpriteShapeRenderer:
+  m_CorrespondingSourceObject: {fileID: 8265317305523577974, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
+  m_PrefabInstance: {fileID: 569518569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1693070450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1541,11 @@ SpriteRenderer:
 --- !u!4 &1716947840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2086528981759109182, guid: 313b93b35e25e9e489f7039a7cd763ce, type: 3}
+  m_PrefabInstance: {fileID: 255811788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1716947843 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4097364922111853831, guid: 313b93b35e25e9e489f7039a7cd763ce, type: 3}
   m_PrefabInstance: {fileID: 255811788}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1759599456

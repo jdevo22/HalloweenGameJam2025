@@ -15,12 +15,14 @@ public class LightMovement : MonoBehaviour
     private Vector2 startPosition;
     private Vector3 originPosition;
     public bool MouseClickedPlayer;
+    private GameObject stationaryNode;
 
     public Transform nodes1;
     public Transform nodes2;
 
     void Awake()
     {
+        stationaryNode = new GameObject("stationaryNode");
         MouseClickedPlayer = false;
         startPosition = transform.position;
         LightEnemy = this.gameObject;
@@ -36,7 +38,7 @@ public class LightMovement : MonoBehaviour
         if (nodes1 == null && nodes2 == null)
         {
 
-            GameObject stationaryNode = new GameObject("stationaryNode");
+            //GameObject stationaryNode = new GameObject("stationaryNode");
             stationaryNode.transform.position = startPosition;
             //create one node at the location
             PathNode = new GameObject[1];
@@ -129,5 +131,14 @@ public class LightMovement : MonoBehaviour
         PathNode = null;
         CurrentNode = 0;
         Start();
+    }
+    public void OnEnable()
+    {
+       this.enabled = true;
+    }
+
+    public void OnDisable()
+    {
+        this.enabled = false;
     }
 }

@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.U2D;
 using System.Collections;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class LightTest2 : MonoBehaviour
 {
     // ... (rayCount, rayLength, etc. are unchanged) ...
     public int rayCount = 50;
     public float rayLength = 10f;
-    [Range(0, 360)]
-    public float lightAngle = 90f;
+    public float lightAngle = 360;
     public LayerMask obstacleLayer;
     public SpriteShapeController lightShapeController;
 
@@ -17,15 +18,84 @@ public class LightTest2 : MonoBehaviour
     [Tooltip("How long the shrink and grow animations take.")]
     public float shrinkGrowDuration = 0.25f;
     [Tooltip("How long the light stays small.")]
-    public float holdDuration = 15f;
+    public float holdDuration = 1f;
 
     private MouseFollower player;
     private float initialRayLength;
     private Coroutine shrinkEffectCoroutine; // 2. Variable to track the running coroutine
 
+    private List<BearTrap> bearTrapList;
+
+    private bool seesPlayer;
+
+    private List<GameObject> otherLightTests = new List<GameObject>();
+
     void Awake()
     {
         initialRayLength = rayLength;
+        bearTrapList = new List<BearTrap>();
+
+        if(transform.name == "LightEnemy (1)")
+        {
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (2)"));
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (3)"));
+            }
+            catch
+            {
+
+            }
+        }
+
+        if (transform.name == "LightEnemy (2)")
+        {
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (1)"));
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (3)"));
+            }
+            catch
+            {
+
+            }
+        }
+
+        if (transform.name == "LightEnemy (3)")
+        {
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (2)"));
+            }
+            catch
+            {
+
+            }
+            try
+            {
+                otherLightTests.Add(GameObject.Find("LightEnemy (1)"));
+            }
+            catch
+            {
+
+            }
+        }
+
+        Debug.Log(otherLightTests.Count + "other light tests");
     }
 
     void OnEnable()
@@ -90,6 +160,17 @@ public class LightTest2 : MonoBehaviour
 
     void UpdateLightShape()
     {
+        if (bearTrapList.Count > 0)
+        {
+            for (int i = 0; i < bearTrapList.Count; i++)
+            {
+                bearTrapList[i].HideTrap();
+            }
+            bearTrapList.Clear();
+        }
+
+        seesPlayer = false;
+        
         lightShapeController.spline.Clear();
         lightShapeController.spline.InsertPointAt(0, Vector3.zero);
         lightShapeController.spline.SetHeight(0, 0);
@@ -108,8 +189,16 @@ public class LightTest2 : MonoBehaviour
                 hitPoint = hit.point;
                 if (hit.transform.tag == "Player")
                 {
+                    
+                    seesPlayer = true;
                     player = hit.collider.GetComponent<MouseFollower>();
-                    player.OnDeath();
+                    StartCoroutine(KillTimer());
+
+                }
+
+                if(hit.transform.tag == "trap")
+                {
+                    bearTrapList.Add(hit.transform.GetComponent<BearTrap>());
                 }
             }
             else
@@ -119,5 +208,48 @@ public class LightTest2 : MonoBehaviour
             lightShapeController.spline.InsertPointAt(i + 1, transform.InverseTransformPoint(hitPoint));
             lightShapeController.spline.SetHeight(i + 1, 0);
         }
+        for (int i = 0; i < bearTrapList.Count; i++)
+        {
+            bearTrapList[i].RevealTrap();
+        }
     }
+
+    private IEnumerator KillTimer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (seesPlayer)
+        {
+            player.OnDeath();
+            player.GetComponent<BoxCollider2D>().enabled = false;
+            ResetRays(0);
+            for (int i = 0; i < otherLightTests.Count; i++)
+            {
+                if (otherLightTests[i] != null)
+                {
+                    otherLightTests[i].GetComponent<LightTest2>().ResetRays(0);
+                }
+            }
+            rayLength = initialRayLength;
+        }
+
+
+    }
+
+    public void ResetRays(int id)
+    {
+        rayLength = initialRayLength;
+
+        if(id == 1)
+        {
+            for (int i = 0; i < otherLightTests.Count; i++)
+            {
+                if (otherLightTests[i] != null)
+                {
+                    otherLightTests[i].GetComponent<LightTest2>().ResetRays(0);
+                }
+            }
+        }
+    }
+
+
 }

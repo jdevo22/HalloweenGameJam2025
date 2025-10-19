@@ -5,7 +5,29 @@ public class BearTrap : MonoBehaviour
     [SerializeField] private AudioSource triggerSound;
     [SerializeField] private Animator animator;
 
+    private SpriteRenderer spriteRenderer;
+
     private bool triggered = false;
+
+    private GameObject lightTest;
+
+    private void Awake()
+    {
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
+        HideTrap();
+
+        lightTest = GameObject.Find("LightEnemy (1)");
+    }
+
+    public void RevealTrap()
+    {
+        spriteRenderer.enabled = true;
+    }
+
+    public void HideTrap()
+    {
+        spriteRenderer.enabled = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,7 +38,9 @@ public class BearTrap : MonoBehaviour
 
         Debug.Log("Object is Player");
 
-        MouseFollower player = collision.GetComponent<MouseFollower>();            
+        MouseFollower player = collision.GetComponent<MouseFollower>();
+
+        lightTest.GetComponent<LightTest2>().ResetRays(1);
 
         if (player != null && !triggered)
         {
@@ -24,6 +48,7 @@ public class BearTrap : MonoBehaviour
 
             // Call Jackson's death function
             player.OnDeath();
+            Debug.Log("Bear Trap");
 
             // Optional: trigger trap animation & sound
             if (animator != null)
