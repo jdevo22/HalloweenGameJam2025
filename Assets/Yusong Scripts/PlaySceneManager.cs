@@ -11,6 +11,14 @@ public class PlaySceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("FinalLevel1");
     }
+    public void CreditScene(string sceneName)
+    {
+        SceneManager.LoadScene("CreditsScene");
+    } 
+    public void BackFromCredits(string sceneName)
+    {
+        SceneManager.LoadScene("FinalLevel0");
+    }
 }
 
  
