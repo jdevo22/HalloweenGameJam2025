@@ -50,11 +50,8 @@ public class CreditScroller : MonoBehaviour
         // Use the height of the bounding box to know how far to scroll
         totalHeight = creditsText.preferredHeight;
 
-        // Start the credits just below the bottom of the screen (assuming a vertical layout)
-        rectTransform.anchoredPosition = new Vector2(
-            rectTransform.anchoredPosition.x,
-            -rectTransform.rect.height // Start off-screen below the viewport
-        );
+        
+        
     }
 
     void Update()

@@ -9,29 +9,32 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
-    path: Assets/Scenes/FinalLevels/FinalLevel3 Deprecated.unity
+    path: Assets/Scenes/DO NOT USE FinalLevels/FinalLevel3 Deprecated.unity
     guid: 0aca6ce0d34a97f49809d99b73e242de
   - enabled: 0
-    path: Assets/Scenes/FinalLevels/FinalLevel1.unity
+    path: Assets/Scenes/DO NOT USE FinalLevels/FinalLevel1.unity
     guid: fb24c76686050a74ba9ac486d59816bc
   - enabled: 0
-    path: Assets/Scenes/FinalLevels/FinalLevel3.unity
+    path: Assets/Scenes/DO NOT USE FinalLevels/FinalLevel3.unity
     guid: 5c999b63f14ab3d47887dabd8b4bc3bf
   - enabled: 0
-    path: Assets/Scenes/FinalLevels/FinalLevel4.unity
+    path: Assets/Scenes/DO NOT USE FinalLevels/FinalLevel4.unity
     guid: 54c92de5b315e9949b985c4ab89ac6ac
   - enabled: 0
-    path: Assets/Scenes/FinalLevels/FinalLevel2.unity
+    path: Assets/Scenes/DO NOT USE FinalLevels/FinalLevel2.unity
     guid: 1336851431958c847b9bd1f0d448055e
   - enabled: 0
-    path: Assets/Scenes/FinalLevels/FinalLevel5.unity
+    path: Assets/Scenes/DO NOT USE FinalLevels/FinalLevel5.unity
     guid: 35efba6c4a7b3424e928c09a3733e94c
   - enabled: 0
-    path: Assets/Scenes/FinalLevels/FinalLevel6.unity
+    path: Assets/Scenes/DO NOT USE FinalLevels/FinalLevel6.unity
     guid: b7774ba5e4109a3439cf63ff47378156
+  - enabled: 0
+    path: Assets/Scenes/DO NOT USE FinalLevels/FinalLevel0.unity
+    guid: 28aa01645e9443042a92f6d9542ec017
   - enabled: 1
     path: Assets/Scenes/SpiderLevels/FinalLevel0.unity
-    guid: 28aa01645e9443042a92f6d9542ec017
+    guid: b2360b9e8bbd4244c92df3b260ec171b
   - enabled: 1
     path: Assets/Scenes/SpiderLevels/SpiderFinalLevel1.unity
     guid: f0480cd514e34ee44be102dab8167405
@@ -47,6 +50,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpiderLevels/SpiderFinalLevel5.unity
     guid: 5730f8428fef7c84e8b7238205476669
+  - enabled: 1
+    path: Assets/Scenes/SpiderLevels/SpiderFinalLevel6.unity
+    guid: 96778d46c15aae64fbf16c0077eee0cf
+  - enabled: 1
+    path: Assets/Scenes/SpiderLevels/SpiderFinalLevel7.unity
+    guid: 1146f31a53ea81844a062f89f1b555fd
+  - enabled: 1
+    path: Assets/Scenes/SpiderLevels/SpiderFinalLevel8.unity
+    guid: 51888dc44a4fbe44ba1f1320e3e15cf7
+  - enabled: 1
+    path: Assets/Scenes/SpiderLevels/SpiderFinalLevel9.unity
+    guid: fd0cfbb40ea047740b5b7e25615f0c0b
+  - enabled: 1
+    path: Assets/Scenes/SpiderLevels/SpiderFinalLevel10.unity
+    guid: 8719c3c67ee2e5144be30f05515f7d61
   - enabled: 1
     path: Assets/Scenes/SpiderLevels/CreditsScene.unity
     guid: ba949580cd6f76c468ca3ea79c009e08
