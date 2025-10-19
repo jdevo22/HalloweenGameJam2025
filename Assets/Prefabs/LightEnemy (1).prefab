@@ -128,9 +128,11 @@ GameObject:
   - component: {fileID: 1641878339064240814}
   - component: {fileID: 8265317305523577974}
   - component: {fileID: 7058609618211167990}
-  m_Layer: 0
+  - component: {fileID: 8628735075469879527}
+  - component: {fileID: 2870934637429201760}
+  m_Layer: 8
   m_Name: Closed Sprite Shape
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -279,52 +281,43 @@ MonoBehaviour:
   m_BoundsScale: 2
   m_Creator: {fileID: 0}
   m_Modifiers: []
-  m_ColliderSegment: []
+  m_ColliderSegment:
+  - {x: -1.000225, y: -1.25}
+  - {x: -1.1188178, y: -1.2244213}
+  - {x: -1.3885436, y: -1.114564}
+  - {x: -1.6036682, y: -0.9498428}
+  - {x: -1.9081733, y: -0.64586526}
+  - {x: -2.070627, y: -0.44757926}
+  - {x: -2.3539116, y: -0.021798603}
+  - {x: -2.4641333, y: 0.19576566}
+  - {x: -2.545496, y: 0.41263875}
+  - {x: -2.5889583, y: 0.6308825}
+  - {x: -2.5741858, y: 0.8558159}
+  - {x: -2.464436, y: 1.0689558}
+  - {x: -2.2578897, y: 1.2082032}
+  - {x: -2.0184798, y: 1.2493161}
+  - {x: 2.018362, y: 1.2493248}
+  - {x: 2.2575493, y: 1.2083654}
+  - {x: 2.4640565, y: 1.0693963}
+  - {x: 2.5741267, y: 0.8566334}
+  - {x: 2.5895038, y: 0.6318505}
+  - {x: 2.5329523, y: 0.37464565}
+  - {x: 2.465911, y: 0.19657594}
+  - {x: 2.2237046, y: -0.2372148}
+  - {x: 1.9113927, y: -0.6456635}
+  - {x: 1.5673921, y: -0.9850317}
+  - {x: 1.3903778, y: -1.1148466}
+  - {x: 1.2043858, y: -1.2097352}
+  - {x: 1.0262973, y: -1.248613}
+  - {x: -1.000225, y: -1.25}
   m_ShadowSegment: []
---- !u!1 &5345780843172220339
-GameObject:
+--- !u!60 &8628735075469879527
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9123276136125772607}
-  - component: {fileID: 5463973007353315740}
-  - component: {fileID: 2919909787298123423}
-  - component: {fileID: 7233909045209558530}
-  - component: {fileID: 6913366451544737959}
-  m_Layer: 0
-  m_Name: LightEnemy (1)
-  m_TagString: light
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9123276136125772607
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345780843172220339}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.300357, y: 0.05976498, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7757248062256211979}
-  - {fileID: 1641878339064240814}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5463973007353315740
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345780843172220339}
+  m_GameObject: {fileID: 4920557375623361134}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -362,16 +355,45 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!50 &2919909787298123423
+  m_Points:
+    m_Paths:
+    - - {x: -1.000225, y: -1.25}
+      - {x: -1.1188178, y: -1.2244213}
+      - {x: -1.3885436, y: -1.114564}
+      - {x: -1.6036682, y: -0.9498428}
+      - {x: -1.9081733, y: -0.64586526}
+      - {x: -2.070627, y: -0.44757926}
+      - {x: -2.3539116, y: -0.021798603}
+      - {x: -2.4641333, y: 0.19576566}
+      - {x: -2.545496, y: 0.41263875}
+      - {x: -2.5889583, y: 0.6308825}
+      - {x: -2.5741858, y: 0.8558159}
+      - {x: -2.464436, y: 1.0689558}
+      - {x: -2.2578897, y: 1.2082032}
+      - {x: -2.0184798, y: 1.2493161}
+      - {x: 2.018362, y: 1.2493248}
+      - {x: 2.2575493, y: 1.2083654}
+      - {x: 2.4640565, y: 1.0693963}
+      - {x: 2.5741267, y: 0.8566334}
+      - {x: 2.5895038, y: 0.6318505}
+      - {x: 2.5329523, y: 0.37464565}
+      - {x: 2.465911, y: 0.19657594}
+      - {x: 2.2237046, y: -0.2372148}
+      - {x: 1.9113927, y: -0.6456635}
+      - {x: 1.5673921, y: -0.9850317}
+      - {x: 1.3903778, y: -1.1148466}
+      - {x: 1.2043858, y: -1.2097352}
+      - {x: 1.0262973, y: -1.248613}
+      - {x: -1.000225, y: -1.25}
+  m_UseDelaunayMesh: 0
+--- !u!50 &2870934637429201760
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345780843172220339}
+  m_GameObject: {fileID: 4920557375623361134}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -391,6 +413,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &5345780843172220339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9123276136125772607}
+  - component: {fileID: 7233909045209558530}
+  - component: {fileID: 6913366451544737959}
+  m_Layer: 0
+  m_Name: LightEnemy (1)
+  m_TagString: trap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9123276136125772607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345780843172220339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.300357, y: 0.05976498, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7757248062256211979}
+  - {fileID: 1641878339064240814}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7233909045209558530
 MonoBehaviour:
   m_ObjectHideFlags: 0
