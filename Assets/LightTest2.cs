@@ -26,7 +26,10 @@ public class LightTest2 : MonoBehaviour
 
     private List<BearTrap> bearTrapList;
 
-    private bool seesPlayer;
+    private bool seesPlayer1;
+    private bool seesPlayer2;
+
+    private int deathID;
 
     private List<GameObject> otherLightTests = new List<GameObject>();
 
@@ -94,8 +97,6 @@ public class LightTest2 : MonoBehaviour
 
             }
         }
-
-        Debug.Log(otherLightTests.Count + "other light tests");
     }
 
     void OnEnable()
@@ -169,7 +170,7 @@ public class LightTest2 : MonoBehaviour
             bearTrapList.Clear();
         }
 
-        seesPlayer = false;
+        seesPlayer1 = false;
         
         lightShapeController.spline.Clear();
         lightShapeController.spline.InsertPointAt(0, Vector3.zero);
@@ -190,9 +191,9 @@ public class LightTest2 : MonoBehaviour
                 if (hit.transform.tag == "Player")
                 {
                     
-                    seesPlayer = true;
-                    player = hit.collider.GetComponent<MouseFollower>();
-                    StartCoroutine(KillTimer());
+                    seesPlayer1 = true;
+                    //player = hit.collider.GetComponent<MouseFollower>();
+                    //StartCoroutine(KillTimer());
 
                 }
 
@@ -214,10 +215,10 @@ public class LightTest2 : MonoBehaviour
         }
     }
 
-    private IEnumerator KillTimer()
+    private IEnumerator KillTimer() //old depreciated
     {
         yield return new WaitForSeconds(0.5f);
-        if (seesPlayer)
+        if (seesPlayer1)
         {
             player.OnDeath();
             player.GetComponent<BoxCollider2D>().enabled = false;
@@ -233,6 +234,24 @@ public class LightTest2 : MonoBehaviour
         }
 
 
+    }
+
+    public void OnKill()
+    {
+        ResetRays(0);
+        for (int i = 0; i < otherLightTests.Count; i++)
+        {
+            if (otherLightTests[i] != null)
+            {
+                otherLightTests[i].GetComponent<LightTest2>().ResetRays(0);
+            }
+        }
+        rayLength = initialRayLength;
+    }
+
+    public void OnKillReset()
+    {
+        deathID = 0;
     }
 
     public void ResetRays(int id)

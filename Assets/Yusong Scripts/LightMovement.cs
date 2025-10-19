@@ -23,7 +23,7 @@ public class LightMovement : MonoBehaviour
     void Awake()
     {
         stationaryNode = new GameObject("stationaryNode");
-        MouseClickedPlayer = false;
+        MouseClickedPlayer = true;
         startPosition = transform.position;
         LightEnemy = this.gameObject;
         if (LightEnemy != null)
@@ -121,8 +121,8 @@ public class LightMovement : MonoBehaviour
             }
         }
     }
-    public void OnReset() {
-        MouseClickedPlayer = false;
+    public void OnReset() 
+    {
         if (LightEnemy != null)
         {
             LightEnemy.transform.position = originPosition;
@@ -132,6 +132,8 @@ public class LightMovement : MonoBehaviour
         CurrentNode = 0;
         Start();
     }
+
+
     public void OnEnable()
     {
        this.enabled = true;
