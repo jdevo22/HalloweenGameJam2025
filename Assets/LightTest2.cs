@@ -121,10 +121,11 @@ public class LightTest2 : MonoBehaviour
         while (enablePulseEffect)
         {
             float pulseProgress = (Mathf.Sin(Time.time * pulseSpeed) + 1f) / 2f;
-            spriteRenderer.color = pulseColor.Evaluate(pulseProgress);
+           
 
             if (!isShrinkEffectActive)
             {
+                spriteRenderer.color = pulseColor.Evaluate(pulseProgress);
                 rayLength = Mathf.Lerp(initialRayLength * minSizeMultiplier, initialRayLength * maxSizeMultiplier, pulseProgress);
             }
 
@@ -146,6 +147,8 @@ public class LightTest2 : MonoBehaviour
     private IEnumerator ShrinkEffectCoroutine()
     {
         isShrinkEffectActive = true; // Take control of the light's size
+        
+        spriteRenderer.color = Color.blue;
 
         float startLength = rayLength;
         float targetLength = initialRayLength * 0.5f;
