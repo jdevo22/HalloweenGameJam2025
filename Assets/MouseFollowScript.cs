@@ -1,7 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
-using System.Collections;
+using UnityEngine.U2D;
 
 /// <summary>
 /// This script makes a 2D GameObject continuously follow the mouse cursor's position in the game world.
@@ -59,9 +60,25 @@ public class MouseFollower : MonoBehaviour
     private LightMovement[] light;
     public TokenManager tokenManager; //Drag into component in inspector
 
+    public SpriteRenderer[] spriteRenderers;    //turning all the level sprite renderers off at the beginning of each level
+    public SpriteShapeRenderer[] spriteShapeRenderers; //turning all the level sprite shape renderers off at the beginning of each level
+
     /// <summary>
     /// Called when the script instance is being loaded.
     /// </summary>
+    /// 
+    void Awake()
+    {
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].enabled = false;
+        }
+        for (int j = 0; j < spriteShapeRenderers.Length; j++)
+        {
+            spriteShapeRenderers[j].enabled = false;
+        }
+
+    }
     void Start()
     {
         light = new LightMovement[lightTransform.Length];
@@ -198,6 +215,15 @@ public class MouseFollower : MonoBehaviour
             tokenManager.OnDeath();
         }
 
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].enabled = false;
+        }
+        for (int j = 0; j < spriteShapeRenderers.Length; j++)
+        {
+            spriteShapeRenderers[j].enabled = false;
+        }
+
 
         this.GetComponent<SpriteRenderer>().sprite = deadSprite;
 
@@ -220,7 +246,16 @@ public class MouseFollower : MonoBehaviour
         {
             light[i].MouseClickedPlayer = true;
         }
-        
+
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].enabled = true;
+        }
+        for (int j = 0; j < spriteShapeRenderers.Length; j++)
+        {
+            spriteShapeRenderers[j].enabled = true;
+        }
+
 
     }
 
