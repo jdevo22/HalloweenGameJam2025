@@ -355,7 +355,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.9
+  orthographic size: 11.77
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 257297579}
   m_Layer: 6
   m_Name: BoundaryLong (19)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 282561392}
   m_Layer: 6
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -771,7 +771,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.45098042, g: 0.44705886, b: 0.44705886, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1086,7 +1086,7 @@ GameObject:
   - component: {fileID: 315195520}
   m_Layer: 6
   m_Name: BoundaryLong (8)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 354303315}
   m_Layer: 6
   m_Name: BoundaryLong (16)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2189,7 +2189,7 @@ GameObject:
   - component: {fileID: 555685379}
   m_Layer: 6
   m_Name: BoundaryLong (1)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2323,7 +2323,7 @@ GameObject:
   - component: {fileID: 596888100}
   m_Layer: 6
   m_Name: BoundaryLong (11)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2636,7 +2636,7 @@ GameObject:
   - component: {fileID: 648436234}
   m_Layer: 6
   m_Name: BoundaryLong (2)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2931,6 +2931,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &734380357
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385158583266720890, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973857940620077345, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d26c5d88fd7add14f919f4a34468bd66, type: 3}
 --- !u!1 &735869297
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,7 +3215,7 @@ GameObject:
   - component: {fileID: 751829481}
   m_Layer: 6
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3426,7 +3523,7 @@ GameObject:
   - component: {fileID: 792105688}
   m_Layer: 6
   m_Name: BoundaryLong (7)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4237,7 +4334,7 @@ GameObject:
   - component: {fileID: 1056249841}
   m_Layer: 6
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4287,7 +4384,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.45098042, g: 0.44705886, b: 0.44705886, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4762,7 +4859,7 @@ GameObject:
   - component: {fileID: 1230348680}
   m_Layer: 6
   m_Name: BoundaryLong (10)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5066,9 +5163,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1263294398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OuterBounds
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5105,7 +5202,7 @@ GameObject:
   - component: {fileID: 1267423024}
   m_Layer: 6
   m_Name: BoundaryLong (6)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5612,7 +5709,7 @@ GameObject:
   - component: {fileID: 1398270708}
   m_Layer: 6
   m_Name: BoundaryLong (3)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6045,7 +6142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967206262886180954, guid: a46fa34561cd92d4c947a525b71d033c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.730347
+      value: -10.51
       objectReference: {fileID: 0}
     - target: {fileID: 6967206262886180954, guid: a46fa34561cd92d4c947a525b71d033c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6665,7 +6762,7 @@ GameObject:
   - component: {fileID: 1759599459}
   m_Layer: 6
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6715,7 +6812,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.45098042, g: 0.44705886, b: 0.44705886, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6799,7 +6896,7 @@ GameObject:
   - component: {fileID: 1769716589}
   m_Layer: 6
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6849,7 +6946,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.45098042, g: 0.44705886, b: 0.44705886, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6933,7 +7030,7 @@ GameObject:
   - component: {fileID: 1777367942}
   m_Layer: 6
   m_Name: Isometric Diamond
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7681,7 +7778,7 @@ GameObject:
   - component: {fileID: 1934668315}
   m_Layer: 6
   m_Name: BoundaryLong (4)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8076,7 +8173,7 @@ GameObject:
   - component: {fileID: 1993983836}
   m_Layer: 6
   m_Name: BoundaryLong (9)
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8753,3 +8850,4 @@ SceneRoots:
   - {fileID: 1537719889}
   - {fileID: 751829483}
   - {fileID: 1505495142}
+  - {fileID: 734380357}

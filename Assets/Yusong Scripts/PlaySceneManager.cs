@@ -9,7 +9,15 @@ public class PlaySceneManager : MonoBehaviour
     { }
         public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene("FinalLevel1");
+        SceneManager.LoadScene("SpiderFinalLevel1");
+    }
+    public void CreditScene(string sceneName)
+    {
+        SceneManager.LoadScene("CreditsScene");
+    } 
+    public void BackFromCredits(string sceneName)
+    {
+        SceneManager.LoadScene("FinalLevel0");
     }
 }
 

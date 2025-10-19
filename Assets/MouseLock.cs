@@ -22,5 +22,15 @@ public class MouseLock : MonoBehaviour
         }
     }
 
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        targetPos = this.transform.position;
+        Vector2 screenPos = mainCam.WorldToScreenPoint(targetPos);
+        if (Mouse.current != null)
+        {
+            Mouse.current.WarpCursorPosition(screenPos);
+        }
+    }
+
 
 }
