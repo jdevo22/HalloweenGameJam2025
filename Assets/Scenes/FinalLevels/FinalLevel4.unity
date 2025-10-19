@@ -2536,6 +2536,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5345780843172220339, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
   m_PrefabInstance: {fileID: 831365325}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &629961952 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9123276136125772607, guid: d21d33fa611214e4da2978ed77e9db3f, type: 3}
+  m_PrefabInstance: {fileID: 831365325}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &647682901
 GameObject:
   m_ObjectHideFlags: 0
@@ -5792,6 +5797,18 @@ PrefabInstance:
       propertyPath: lightTransform
       value: 
       objectReference: {fileID: 2118461303}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: lightTransform.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'lightTransform.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2118461303}
+    - target: {fileID: 1920779348845098578, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
+      propertyPath: 'lightTransform.Array.data[1]'
+      value: 
+      objectReference: {fileID: 629961952}
     - target: {fileID: 4853755957622494503, guid: 0d08841cf0f35a94cae38b81866ed8b1, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
