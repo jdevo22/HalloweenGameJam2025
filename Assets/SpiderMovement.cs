@@ -20,6 +20,8 @@ public class SpiderMovement : MonoBehaviour
 
     RaycastHit2D lightHit;
 
+    public float deathTime;
+
 
 
     private void Awake()
@@ -32,7 +34,7 @@ public class SpiderMovement : MonoBehaviour
     private IEnumerator DeathTimer()
     {
         Debug.Log("close to dead");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(deathTime);
         Debug.Log("almost dead");
         if(isDying)
         {
@@ -90,8 +92,9 @@ public class SpiderMovement : MonoBehaviour
             this.gameObject.transform.position = targetPos;
             return;
         }
-
-        if (raycastHit.collider != null)
+        Debug.Log("wow")
+;
+        if (raycastHit.collider != null && !isBlocked)
         {
             if (raycastHit.collider.tag == "obstacle")
             {
@@ -110,6 +113,7 @@ public class SpiderMovement : MonoBehaviour
 
             if(raycastHit.collider.tag == "token")
             {
+                Debug.Log("token");
                 Token token = raycastHit.collider.GetComponent<Token>();
                 token.HitByPlayer();
             }
