@@ -37,4 +37,9 @@ public class Token : MonoBehaviour
             tokenManager.CollectToken(this.gameObject);
         }
     }
+
+    public void HitByPlayer()
+    {
+        tokenManager.CollectToken(this.gameObject);
+    }
 }
