@@ -9,7 +9,9 @@ public class SpiderMovement : MonoBehaviour
     private Camera mainCam;
     [SerializeField] private LayerMask blockingLayers;
     [SerializeField] private LayerMask lightLayer;
+    [SerializeField] private float rotationSpeed = 15f; // Controls how fast the spider turns
     private Vector2 initialPos;
+    private Vector3 lastMousePosition; // Stores the mouse position from the previous frame
     private MouseLock mouseLock;
 
     private bool isBlocked;
@@ -90,6 +92,25 @@ public class SpiderMovement : MonoBehaviour
         {
             targetPos = mousePos;
             this.gameObject.transform.position = targetPos;
+            // --- REVISED ROTATION LOGIC ---
+
+            // 1. Calculate the direction the mouse has moved since the last frame.
+            Vector2 movementDirection = mousePos - lastMousePosition;
+
+            // 2. Only update rotation if the mouse has actually moved.
+            // This prevents the spider from snapping to a default rotation when the mouse is still.
+            if (movementDirection.sqrMagnitude > 0.001f)
+            {
+                // 3. Calculate the angle from the movement direction.
+                float angle = Mathf.Atan2(movementDirection.y, movementDirection.x) * Mathf.Rad2Deg;
+                Quaternion targetRotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+
+                // 4. Smoothly rotate towards the target.
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+
+            // 5. Update the last mouse position for the next frame.
+            lastMousePosition = mousePos;
             return;
         }
         Debug.Log("wow")
